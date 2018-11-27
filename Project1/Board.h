@@ -1,6 +1,8 @@
-#pragma once
-class Board
-{
+#include <vector>
+#include <string>
+
+class Board {
+	
 public:
 	Board();
 	~Board();
