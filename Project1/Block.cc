@@ -7,7 +7,6 @@ Block::Block(bool h)
 {
 	std::pair<int, int> p(0, 14);
 	base = p;
-
 }
 
 
@@ -49,7 +48,7 @@ void Block::moveDown(std::vector<std::vector<bool>> grid)
 {
 }
 
-void Block::moveBottem(std::vector<std::vector<bool>> grid)
+void Block::drop(std::vector<std::vector<bool>> grid)
 {
 }
 
