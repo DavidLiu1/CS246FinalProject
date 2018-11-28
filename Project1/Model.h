@@ -7,4 +7,6 @@ class Model : public Subject {
 public:
 	Model();
 	~Model();
+	Board* getBoardOne();
+	Board* getBoardTwo();
 };
