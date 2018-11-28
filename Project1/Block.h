@@ -1,15 +1,24 @@
+#pragma once
 #include <utility>
 #include <vector>
-#include <cstdlib>
-
-
-class Block{
-	std::pair<int, int> coord;
-	bool isCleared;
-
+class Block
+{
+protected:
+	int state;
+	bool heavy;
+	std::pair<int, int> base;
+	std::vector <std::pair<int, int>> points;
 public:
-	Block();
-	int getX();
-	int getY();
-	bool ifCleared();
+	Block(bool h);
+	virtual ~Block();
+	void moveLeft(std::vector <std::vector<bool>> grid);
+	void moveRight(std::vector <std::vector<bool>> grid);
+	void moveDown(std::vector <std::vector<bool>> grid);
+	void moveBottem(std::vector <std::vector<bool>> grid);
+	virtual void rotateClock(std::vector <std::vector<bool>> grid) = 0;
+	virtual void rotateCounter(std::vector <std::vector<bool>> grid) = 0;
+	std::vector <std::pair<int, int>> getPointes();
+	bool isHeavy();
+
 };
+
