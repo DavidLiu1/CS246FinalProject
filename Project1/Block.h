@@ -13,7 +13,7 @@ public:
 	virtual ~Block();
 	void moveLeft(std::vector <std::vector<bool>> grid);
 	void moveRight(std::vector <std::vector<bool>> grid);
-	void moveDown(std::vector <std::vector<bool>> grid);
+	bool moveDown(std::vector <std::vector<bool>> grid);
 	void drop(std::vector <std::vector<bool>> grid);
 	virtual void rotateClock(std::vector <std::vector<bool>> grid) = 0;
 	virtual void rotateCounter(std::vector <std::vector<bool>> grid) = 0;
