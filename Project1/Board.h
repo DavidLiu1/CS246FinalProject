@@ -6,6 +6,8 @@ class Board {
 	int score;
 	std::vector<Block*> blocks;
 	std::vector<std::vector<bool>> grid;
+	Block currBlock;
+	Block nextBlock;
 
 public:
 	Board();
