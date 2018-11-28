@@ -1,3 +1,5 @@
+#ifndef _SUBJECT_
+#define _SUBJECT_
 
 #include <vector>
 class Observer;
@@ -14,3 +16,5 @@ private:
 	typedef std::vector<Observer*> Observers;
 	Observers observers_;
 };
+
+#endif

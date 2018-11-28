@@ -2,7 +2,7 @@
 
 
 
-View::View()
+View::View(Controller* c, Model* m)
 {
 }
 

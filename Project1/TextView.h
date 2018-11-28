@@ -1,8 +1,10 @@
 #pragma once
-class TextView
-{
+class TextView {
+
 public:
 	TextView();
 	~TextView();
+	void printScore();
+	void printBoard();
 };
 

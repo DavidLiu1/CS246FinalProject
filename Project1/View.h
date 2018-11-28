@@ -5,7 +5,7 @@ class Model;
 
 class View : public Observer {
 public:
-	View(Controller*, Model*);
+	View(Controller* c, Model* m);
 	virtual ~View();
 	virtual void update() = 0;
 
