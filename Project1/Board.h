@@ -4,6 +4,7 @@
 
 class Board {
 	int score;
+	int lvl;
 	std::vector<Block*> blocks;
 	std::vector<std::vector<bool>> grid;
 	Block* currBlock;
@@ -19,7 +20,7 @@ public:
 	void moveRight();
 	void moveDown();
 	void drop();
-	virtual void rotateClock();
-	virtual void rotateCounter();
+	void rotateClock();
+	void rotateCounter();
 };
 

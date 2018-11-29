@@ -1,10 +1,14 @@
 #pragma once
-class TextView {
+#include <iostream>
+#include <string>
+#include "View.h"
+
+class TextView : public View{
 
 public:
 	TextView();
 	~TextView();
-	void printScore();
+	void printInfo();
 	void printBoard();
 };
 
