@@ -11,12 +11,13 @@ protected:
 public:
 	Block(bool h);
 	virtual ~Block();
-	void moveLeft(std::vector <std::vector<bool>> grid);
-	void moveRight(std::vector <std::vector<bool>> grid);
-	bool moveDown(std::vector <std::vector<bool>> grid);
-	void drop(std::vector <std::vector<bool>> grid);
-	virtual void rotateClock(std::vector <std::vector<bool>> grid) = 0;
-	virtual void rotateCounter(std::vector <std::vector<bool>> grid) = 0;
+	void moveLeft(std::vector <std::vector<bool>> const grid);
+	void moveRight(std::vector <std::vector<bool>> const grid);
+	bool moveDown(std::vector <std::vector<bool>> const grid);
+	bool filled(std::vector <std::vector<bool>> const grid);
+	void drop(std::vector <std::vector<bool>> const grid);
+	virtual void rotateClock(std::vector <std::vector<bool>> const grid) = 0;
+	virtual void rotateCounter(std::vector <std::vector<bool>> const grid) = 0;
 	std::vector <std::pair<int, int>> getPointes();
 	bool isHeavy();
 
