@@ -10,7 +10,7 @@ TextView::~TextView()
 {
 }
 void TextView::printBoard() {
-
+	for
 }
 void TextView::printInfo() {
 	cout << model_->getBoardOne()->getLvl << endl;
