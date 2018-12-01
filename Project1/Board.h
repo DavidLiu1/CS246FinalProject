@@ -22,5 +22,6 @@ public:
 	void drop();
 	void rotateClock();
 	void rotateCounter();
+	char getColor(int, int);
 };
 

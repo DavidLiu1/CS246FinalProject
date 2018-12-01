@@ -36,3 +36,13 @@ void Board::rotateClock() {
 void Board::rotateCounter() {
 	currBlock->rotateCounter(grid);
 }
+char Board::getColor(int x, int y) {
+	if (!grid.at(x).at(y)) return ' ';
+	for (auto const& block : blocks) {
+		for (auto const& coord : block->getPointes()) {
+			if ( x == coord.first && y == coord.second) {
+				return block->getColor();
+			}
+		}
+	}
+}

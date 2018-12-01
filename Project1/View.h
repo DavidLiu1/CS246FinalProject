@@ -5,11 +5,11 @@ class Model;
 
 class View : public Observer {
 public:
-	View(Controller* c, Model* m);
+	View(Controller*, Model*);
 	virtual ~View();
 	virtual void update() = 0;
 
 protected:
-	Model *model_;
-	Controller *controller_;
+	Model *model;
+	Controller *controller;
 };
