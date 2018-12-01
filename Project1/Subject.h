@@ -7,7 +7,6 @@ class Observer;
 class Subject {
 public:
 	void subscribe(Observer*);
-	void unsubscribe(Observer*);
 
 protected:
 	void notify();

@@ -1,12 +1,12 @@
 #include "Subject.h"
+#include "Observer.h"
 
-
-
-Subject::Subject()
-{
+void Subject::subscribe(Observer *o) {
+	observers_.push_back(o);
 }
 
-
-Subject::~Subject()
-{
+void Subject::notify() {
+	Observers::iterator i;
+	for (i = observers_.begin(); i != observers_.end(); ++i)
+		(*i)->update();
 }

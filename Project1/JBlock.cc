@@ -1,5 +1,5 @@
 #include "JBlock.h"
-
+#include <vector>
 
 
 JBlock::JBlock(bool h)

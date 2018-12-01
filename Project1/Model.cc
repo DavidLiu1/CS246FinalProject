@@ -1,12 +1,14 @@
 #include "Model.h"
 
 
-
-Model::Model()
-{
+Model::Model() : boardOne{ new Board() }, boardTwo{ new Board() }{};
+Model::~Model() {
+	delete boardOne;
+	delete boardTwo;
 }
-
-
-Model::~Model()
-{
+Board* Model::getBoardOne() {
+	return boardOne;
+}
+Board* Model::getBoardTwo() {
+	return boardTwo;
 }

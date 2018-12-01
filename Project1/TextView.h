@@ -6,9 +6,13 @@
 class TextView : public View{
 
 public:
-	TextView();
+	TextView(Controller*, Model*);
 	~TextView();
-	void printInfo();
-	void printBoard();
+	virtual void update() override;
+
+	void printInfoOne();
+	void printInfoTwo();
+	void printBoardOne();
+	void printBoardTwo();
 };
 
