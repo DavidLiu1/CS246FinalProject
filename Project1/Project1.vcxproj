@@ -116,17 +116,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="absCommend.h" />
     <ClInclude Include="Blind.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="commendDeco.h" />
     <ClInclude Include="Controller.h" />
+    <ClInclude Include="dropcmd.h" />
+    <ClInclude Include="emptyCommend.h" />
     <ClInclude Include="IBlock.h" />
     <ClInclude Include="JBlock.h" />
     <ClInclude Include="LBlock.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="moveDowncmd.h" />
+    <ClInclude Include="moveLeftcmd.h" />
+    <ClInclude Include="moveRightcmd.h" />
     <ClInclude Include="OBlock.h" />
     <ClInclude Include="Observer.h" />
+    <ClInclude Include="rotateClockcmd.h" />
+    <ClInclude Include="rotateCountercmd.h" />
     <ClInclude Include="SBlock.h" />
     <ClInclude Include="Subject.h" />
     <ClInclude Include="TBlock.h" />
@@ -136,18 +145,27 @@
     <ClInclude Include="ZBlock.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="absCommend.cc" />
     <ClCompile Include="Blind.cc" />
     <ClCompile Include="Block.cc" />
     <ClCompile Include="Board.cc" />
+    <ClCompile Include="commendDeco.cc" />
     <ClCompile Include="Controller.cc" />
+    <ClCompile Include="dropcmd.cc" />
+    <ClCompile Include="emptyCommend.cc" />
     <ClCompile Include="IBlock.cc" />
     <ClCompile Include="JBlock.cc" />
     <ClCompile Include="LBlock.cc" />
     <ClCompile Include="Level.cc" />
     <ClCompile Include="Main.cc" />
     <ClCompile Include="Model.cc" />
+    <ClCompile Include="moveDowncmd.cc" />
+    <ClCompile Include="moveLeftcmd.cc" />
+    <ClCompile Include="moveRightcmd.cc" />
     <ClCompile Include="OBlock.cc" />
     <ClCompile Include="Observer.cc" />
+    <ClCompile Include="rotateClockcmd.cc" />
+    <ClCompile Include="rotateCountercmd.cc" />
     <ClCompile Include="SBlock.cc" />
     <ClCompile Include="Subject.cc" />
     <ClCompile Include="TBlock.cc" />

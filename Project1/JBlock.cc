@@ -1,9 +1,9 @@
 #include "JBlock.h"
-#include <vector>
 
 
-JBlock::JBlock(bool h)
-	:Block(h)
+
+JBlock::JBlock(bool h, int l)
+	:Block(h,l,"orange")
 {
 	points = { {0,15},{1,15},{2,15},{0,16} };
 }

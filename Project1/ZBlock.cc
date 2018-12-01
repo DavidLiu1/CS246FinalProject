@@ -2,8 +2,8 @@
 
 
 
-ZBlock::ZBlock(bool h)
-	:Block(h)
+ZBlock::ZBlock(bool h, int l)
+	:Block(h,l,"purple")
 {
 	points = { {0,16},{1,16},{1,15},{2,15} };
 }

@@ -1,10 +1,10 @@
 #include <vector>
 #include <string>
 #include "Block.h"
-
+#include "Level.h"
 class Board {
 	int score;
-	int lvl;
+	Level lvl;
 	std::vector<Block*> blocks;
 	std::vector<std::vector<bool>> grid;
 	Block* currBlock;
@@ -18,10 +18,12 @@ public:
 	Block* getCurrBlock();
 	void moveLeft();
 	void moveRight();
-	void moveDown();
+
+	//return true  if it is at bottom after move
+	bool moveDown();
+	//deals with scoring
 	void drop();
 	void rotateClock();
 	void rotateCounter();
-	char getColor(int, int);
 };
 

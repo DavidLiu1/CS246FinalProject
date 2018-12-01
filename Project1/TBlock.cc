@@ -2,8 +2,8 @@
 
 
 
-TBlock::TBlock(bool h)
-	:Block(h)
+TBlock::TBlock(bool h, int l)
+	:Block(h,l,"blue")
 {
 	points = { {0,15},{1,15},{2,15},{1,16} };
 }

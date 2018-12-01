@@ -69,6 +69,33 @@
     <ClInclude Include="Controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="absCommend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="emptyCommend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="commendDeco.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="moveLeftcmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="moveRightcmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="moveDowncmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dropcmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rotateClockcmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rotateCountercmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OBlock.cc">
@@ -126,6 +153,33 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Controller.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="absCommend.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="emptyCommend.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="commendDeco.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="moveLeftcmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="moveRightcmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="moveDowncmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dropcmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rotateClockcmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rotateCountercmd.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

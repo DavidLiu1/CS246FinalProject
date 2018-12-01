@@ -2,8 +2,8 @@
 
 
 
-SBlock::SBlock(bool h)
-	:Block(h)
+SBlock::SBlock(bool h, int l)
+	:Block(h,l,"teal")
 {
 	points = { {0,15},{1,15},{1,16},{2,16} };
 }

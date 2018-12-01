@@ -4,7 +4,7 @@ class JBlock
 	: public Block
 {
 public:
-	JBlock(bool h);
+	JBlock(bool h, int l);
 	~JBlock();
 	virtual void rotateClock(std::vector <std::vector<bool>> const grid);
 	virtual void rotateCounter(std::vector <std::vector<bool>> const grid);

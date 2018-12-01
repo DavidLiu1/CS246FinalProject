@@ -2,11 +2,24 @@
 
 
 
-Block::Block(bool h)
-	: heavy{ h }
+Block::Block(bool h,int l,std::string c)
+	: heavy{ h }, level{ l }, color{ c }
 {
 	std::pair<int, int> p(0, 14);
 	base = p;
+}
+
+bool Block::removeRow(int row)
+{
+	for (int i = 0; i < points.size(); i++) {
+		if (points.at(i).second == row) {
+			points.erase(points.begin() + i);
+			i--;
+		}
+		else if (points.at(i).second > row) {
+			points.at(i).second--;
+		}
+	}
 }
 
 
@@ -14,6 +27,9 @@ Block::~Block()
 {
 }
 
+int Block::getLevel(){
+	return level;
+}
 //in grid, true means theres is a block
 void Block::moveLeft(std::vector<std::vector<bool>> const grid)
 {
@@ -102,3 +118,5 @@ bool Block::isHeavy()
 {
 	return heavy;
 }
+
+
