@@ -14,7 +14,7 @@ void TextView::update() {
 void TextView::printBoardOne() {
 	for (int i = 0; i < 15; i++) {
 		for (int j = 0; j < 11; j++) {
-			cout << model_->getBoardOne()->getColor(i, j);
+			cout << model->getBoardOne()->getColor(i, j);
 		}
 		cout << endl;
 	}
@@ -22,14 +22,14 @@ void TextView::printBoardOne() {
 void TextView::printBoardTwo() {
 	for (int i = 0; i < 15; i++) {
 		for (int j = 0; j < 11; j++) {
-			cout << model_->getBoardTwo()->getColor(i, j);
+			cout << model->getBoardTwo()->getColor(i, j);
 		}
 		cout << endl;
 	}
 }
 void TextView::printInfoOne() {
-	cout << model_->getBoardOne()->getLvl << endl;
+	cout << model->getBoardOne()->getLvl << endl;
 }
 void TextView::printInfoTwo() {
-	cout << model_->getBoardTwo()->getLvl << endl;
+	cout << model->getBoardTwo()->getLvl << endl;
 }
