@@ -8,7 +8,7 @@ class Controller {
 public:
 	Controller(Model*);
 	virtual ~Controller();
-	void startGUIGame(int);
+	void startGame();
 	void levelup();
 	void leveldown();
 	void right();

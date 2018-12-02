@@ -12,3 +12,10 @@ Board* Model::getBoardOne() {
 Board* Model::getBoardTwo() {
 	return boardTwo;
 }
+Model::State Model::state() const {
+	return state_;
+}
+void Model::newGame() {
+	state_ = State::NEW_GAME;
+	notify();
+}

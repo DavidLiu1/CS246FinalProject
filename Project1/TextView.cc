@@ -33,3 +33,29 @@ void TextView::printInfoOne() {
 void TextView::printInfoTwo() {
 	cout << model->getBoardTwo()->getLvl << endl;
 }
+void TextView::update() {
+	Model::State state = model->state();
+	if (state == Model::State::NEW_GAME) {
+		//print boards
+	}
+	else if (state == Model::State::CURR_BLOCK) {
+
+	}
+	else if (state == Model::State::CLEAR_ROW) {
+
+	}
+	else if (state == Model::State::LVL_UP) {
+
+	}
+	else if (state == Model::State::SCORE_CHANGE) {
+
+	}
+	else if (state == Model::State::NEXT_BLOCK) {
+
+	}
+	else if (state == Model::State::RESTART) {
+
+	}
+
+
+}

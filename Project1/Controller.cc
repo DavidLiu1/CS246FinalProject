@@ -6,3 +6,7 @@ Controller::Controller(Model* m) {
 };
 
 Controller::~Controller() {}
+
+void Controller::startGame() {
+	model->newGame();
+}
