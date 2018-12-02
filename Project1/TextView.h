@@ -14,5 +14,6 @@ public:
 	void printInfoTwo();
 	void printBoardOne();
 	void printBoardTwo();
+	void readInput(int boardNum);
 };
 
