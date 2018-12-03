@@ -14,7 +14,7 @@ Board::~Board()
 {
 }
 int Board::getLvl() {
-	return lvl;
+	return lvl->;
 }
 int Board::getScore() {
 	return score;

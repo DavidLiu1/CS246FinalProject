@@ -18,6 +18,10 @@ public:
 	void counterClockwise(int);
 	void drop(int);
 	void restart(int);
+	void random(int);
+	void nonrandom(int);
+	void sequence(int);
+	void test(int, char);
 
 private:
 	Model *model;
