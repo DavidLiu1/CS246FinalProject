@@ -88,7 +88,8 @@ void TextView::readInput() {
 	}
 	else if (s.substr(0, 2) == "se") {
 		if (isPreixOf(s, "sequence")) {
-			//23453156531632564366465
+			//656557657
+
 		}
 	}
 	else if (s.substr(0, 1) == "i") {
@@ -147,13 +148,24 @@ void TextView::printScore() {
 	cout << "Score: " << model->getBoardTwo()->getScore() << endl;
 }
 void TextView::printBoards() {
-	vector<vector<bool>> gridOne = model->getBoardOne()->getGrid();
-	vector<vector<bool>> gridOne = model->getBoardTwo()->getGrid();
 	for (int i = 0; i < 18; i++) {
-		for (int j = 0; j < 11; j++) {
-			
+		for (int j = 0; j < 25; j++) {
+			if (j < 11) {
+				cout << model->getBoardOne()->getColor(i, j);
+			}
+			else if (j < 14) {
+				cout << " ";
+			}
+			else {
+				cout << model->getBoardTwo()->getColor(i, j-14);
+			}
 		}
 	}
+}
+void TextView::printNext() {
+	cout << "Next:         Next:" << endl;
+	cout << model->getBoardOne()->getNext()->getColor();
+	cout << "    " << model->getBoardTwo()->getNext()->getColor() << endl;
 }
 void TextView::update() {
 	Model::State state = model->state();
@@ -170,21 +182,6 @@ void TextView::update() {
 		cout << "Player Two: ";
 		readInput();
 		controller->switchTurn();
-	}
-	else if (state == Model::State::CURR_BLOCK) {
-
-	}
-	else if (state == Model::State::DROP) {
-
-	}
-	else if (state == Model::State::LVL_CHANGE) {
-
-	}
-	else if (state == Model::State::SCORE_CHANGE) {
-
-	}
-	else if (state == Model::State::NEXT_BLOCK) {
-
 	}
 	else if (state == Model::State::RESTART) {
 
