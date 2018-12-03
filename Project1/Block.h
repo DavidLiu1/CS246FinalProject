@@ -11,6 +11,7 @@ protected:
 	std::pair<int, int> base;
 	std::vector <std::pair<int, int>> points;
 	std::string color;
+
 public:
 	Block(bool h, int l, std::string c);
 	//return true if after remove theres no points left
@@ -27,5 +28,6 @@ public:
 	std::vector <std::pair<int, int>> getPointes();
 	bool isHeavy();
 	std::string getColor();
+	virtual std::string getText() = 0;
 };
 

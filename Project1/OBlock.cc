@@ -18,3 +18,8 @@ void OBlock::rotateClock(std::vector<std::vector<bool>> const grid)
 
 void OBlock::rotateCounter(std::vector<std::vector<bool>> const grid)
 {}
+
+std::string OBlock::getText()
+{
+	return "O";
+}

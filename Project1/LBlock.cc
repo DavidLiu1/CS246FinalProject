@@ -96,3 +96,8 @@ void LBlock::rotateCounter(std::vector<std::vector<bool>> const grid)
 		}
 	}
 }
+
+std::string LBlock::getText()
+{
+	return "L";
+}

@@ -96,3 +96,8 @@ void JBlock::rotateCounter(std::vector<std::vector<bool>> const grid)
 		}
 	}
 }
+
+std::string JBlock::getText()
+{
+	return "J";
+}
