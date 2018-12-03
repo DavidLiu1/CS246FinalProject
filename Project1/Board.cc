@@ -226,6 +226,18 @@ std::string Board::getNextType()
 {
 	return nextBlock->getText();
 }
+std::string Board::getType(int x, int y)
+{
+	if (!grid.at(x).at(y)) return " ";
+	for (auto const& block : blocks) {
+		for (auto const& coord : block->getPointes()) {
+			if (x == coord.first && y == coord.second) {
+				return block->getText();
+			}
+		}
+	}
+	return "X";
+}
 void Board::changeBlocks() {
 	currBlock = nextBlock;
 	nextBlock = lvl->makeBlock();
