@@ -51,6 +51,8 @@ public:
 	std::string getType(int x, int y);
 	std::vector <std::pair<int, int>> getPointes();
 	void newBlock();
+	bool lost();
+	bool isHeavy();
 
 };
 

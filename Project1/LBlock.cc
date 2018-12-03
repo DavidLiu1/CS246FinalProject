@@ -3,11 +3,10 @@
 
 
 LBlock::LBlock(bool h, int l)
-	:Block(h,l,"Yellow")
+	:Block(h, l, "Yellow")
 {
-	points = { {0,14},{1,14},{2,14},{2,14} };
+	points = { {0,14},{1,14},{2,14},{2,15} };
 }
-
 
 LBlock::~LBlock()
 {

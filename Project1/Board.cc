@@ -13,8 +13,8 @@ Board::Board(std::string f)
 	lvl = new Level0(file);
 	currBlock = lvl->makeBlock();
 	nextBlock = lvl->makeBlock();
-	std::cout << currBlock->getPointes().at(1).first << std::endl;
-	std::cout << currBlock->getPointes().at(1).second << std::endl;
+	//std::cout << currBlock->getPointes().at(1).first << std::endl;
+	//std::cout << currBlock->getPointes().at(1).second << std::endl;
 }
 Board::~Board()
 {
@@ -59,8 +59,10 @@ void Board::drop() {
 			for (int i = 0; i < 11; i++) {
 				if (!grid.at(7).at((i + index) % 11)) {
 					grid.at(7).at((i + index) % 11) = true;
+					goto afterloop;
 				}
 			}
+			afterloop:
 			checkFull(false);
 		}
 	}
@@ -93,8 +95,9 @@ void Board::checkFull(bool b) {
 				}
 			}
 		}
+		isCleared = true;
 	}
-	score += (numCleared + lvl->getLevel())*(numCleared + lvl->getLevel());
+	score += (numCleared == 0) ? 0: (numCleared + lvl->getLevel())*(numCleared + lvl->getLevel());
 	for (int i = 0; i < numCleared; i++) {
 		std::vector<bool>  temp(11, false);
 		grid.push_back(temp);
@@ -163,7 +166,7 @@ void Board::levelDown()
 {
 	int level = lvl->getLevel()-1;
 	if (level == -1) { return; }
-	//can"t cheat lvl 5 penalty by lvl up
+	//can"t cheat lvl 4 penalty by lvl up
 	if (level == 5) { return; }
 	delete lvl;
 	if (level == 0) {
@@ -266,6 +269,19 @@ void Board::newBlock()
 {
 	currBlock = nextBlock;
 	nextBlock = lvl->makeBlock();
+}
+bool Board::lost()
+{
+	for (int i = 0; i < 4; i++) {
+		if (grid.at(currBlock->getPointes().at(i).second).at(currBlock->getPointes().at(i).first)) {
+			return true;
+		}
+	}
+	return false;
+}
+bool Board::isHeavy()
+{
+	return currBlock->isHeavy();
 }
 void Board::changeBlocks() {
 	currBlock = nextBlock;

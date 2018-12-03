@@ -74,6 +74,7 @@ void Model::levelDown(int num) {
 	notify();
 }
 void Model::right(int num) {
+	//cout << boardOne->isHeavy() << endl;
 	if (turn_ == Model::Turn::PLAYER_ONE) {
 		absCommend * c = new emptyCommend(boardOne);
 		for (int i = 0; i < num; i++) {
@@ -89,6 +90,14 @@ void Model::right(int num) {
 		c->execute();
 	}
 	state_ = State::CURR_BLOCK;
+
+	//cout << boardOne->isHeavy() << endl;
+	if (boardOne->isHeavy()) {
+		if (boardOne->moveDown()) {
+			boardOne->drop();
+			state_ = State::DROP;
+		}
+	}
 	notify();
 }
 void Model::left(int num) {
@@ -107,6 +116,12 @@ void Model::left(int num) {
 		c->execute();
 	}
 	state_ = State::CURR_BLOCK;
+	if (boardOne->isHeavy()) {
+		if (boardOne->moveDown()) {
+			boardOne->drop();
+			state_ = State::DROP;
+		}
+	}
 	notify();
 }
 void Model::down(int num) {
@@ -125,6 +140,12 @@ void Model::down(int num) {
 		c->execute();
 	}
 	state_ = State::CURR_BLOCK;
+	if (boardOne->isHeavy()) {
+		if (boardOne->moveDown()) {
+			boardOne->drop();
+			state_ = State::DROP;
+		}
+	}
 	notify();
 }
 void Model::clockwise(int num) {
@@ -143,6 +164,12 @@ void Model::clockwise(int num) {
 		c->execute();
 	}
 	state_ = State::CURR_BLOCK;
+	if (boardOne->isHeavy()) {
+		if (boardOne->moveDown()) {
+			boardOne->drop();
+			state_ = State::DROP;
+		}
+	}
 	notify();
 }
 void Model::counterClockwise(int num) {
@@ -161,6 +188,12 @@ void Model::counterClockwise(int num) {
 		c->execute();
 	}
 	state_ = State::CURR_BLOCK;
+	if (boardOne->isHeavy()) {
+		if (boardOne->moveDown()) {
+			boardOne->drop();
+			state_ = State::DROP;
+		}
+	}
 	notify();
 }
 void Model::drop(int num) {

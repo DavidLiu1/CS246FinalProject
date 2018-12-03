@@ -1,5 +1,5 @@
 #include "emptyCommend.h"
-
+#include "Board.h"
 
 
 emptyCommend::emptyCommend(Board* b)
@@ -12,5 +12,6 @@ emptyCommend::~emptyCommend()
 {
 }
 Board* emptyCommend::execute() {
+
 	return board;
 }

@@ -18,7 +18,7 @@ bool isPreixOf(std::string cmd, std::string action) {
 		return false;
 	}
 	for (int i = 0; i < cmd.size(); i++) {
-		if (!cmd.at(i) == action.at(i)) {
+		if (cmd.at(i) != action.at(i)) {
 			return false;
 		}
 	}

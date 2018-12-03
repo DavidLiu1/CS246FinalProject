@@ -3,7 +3,7 @@
 
 
 Block::Block(bool h,int l,std::string c)
-	: heavy{ h }, level{ l }, color{ c }
+	: heavy{ h }, level{ l }, color{ c }, state{ 1 }
 {
 	std::pair<int, int> p(0, 14);
 	base = p;
