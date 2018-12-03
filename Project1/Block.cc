@@ -11,6 +11,7 @@ Block::Block(bool h,int l,std::string c)
 
 bool Block::removeRow(int row)
 {
+
 	for (int i = 0; i < points.size(); i++) {
 		if (points.at(i).second == row) {
 			points.erase(points.begin() + i);
@@ -19,6 +20,13 @@ bool Block::removeRow(int row)
 		else if (points.at(i).second > row) {
 			points.at(i).second--;
 		}
+	}
+	if (points.size() == 0) {
+		return true;
+
+	}
+	else {
+		return false;
 	}
 }
 

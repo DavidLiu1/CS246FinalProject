@@ -1,4 +1,4 @@
-#include "WindowView.h"
+/*#include "WindowView.h"
 #include "Model.h"
 #include "Controller.h"
 
@@ -37,3 +37,4 @@ void WindowView::update() {
 	}
 
 }
+*/

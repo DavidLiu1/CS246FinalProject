@@ -96,3 +96,8 @@ void TBlock::rotateCounter(std::vector<std::vector<bool>> const grid)
 		}
 	}
 }
+
+std::string TBlock::getText()
+{
+	return "T";
+}
