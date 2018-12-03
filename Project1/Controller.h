@@ -17,11 +17,12 @@ public:
 	void clockwise(int);
 	void counterClockwise(int);
 	void drop(int);
-	void restart(int);
-	void random(int);
-	void nonrandom(int);
-	void sequence(int);
-	void test(int, char);
+	void restart();
+	void random();
+	void nonrandom();
+	void sequence();
+	void test(char);
+	void switchTurn();
 
 private:
 	Model *model;

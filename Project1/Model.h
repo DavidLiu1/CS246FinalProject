@@ -14,17 +14,35 @@ public:
 		BOARD_TWO_INPUT,
 		CURR_BLOCK,
 		DROP,
-		LVL_UP,
+		LVL_CHANGE,
 		SCORE_CHANGE,
 		NEXT_BLOCK,
 		RESTART
 	};
+	enum class Turn {
+		PLAYER_ONE,
+		PLAYER_TWO
+	};
 	void newGame();
-
+	void levelUp(int);
+	void levelDown(int);
+	void right(int);
+	void left(int);
+	void down(int);
+	void clockwise(int);
+	void counterClockwise(int);
+	void drop(int);
+	void restart();
+	void random();
+	void nonrandom();
+	void sequence();
+	void test(char);
+	void switchTurn();
 	State state() const;
-
+	Turn turn() const;
 private:
 	State state_;
+	Turn turn_;
 	Board *boardOne;
 	Board *boardTwo;
 

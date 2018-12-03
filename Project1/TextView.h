@@ -4,16 +4,16 @@
 #include "View.h"
 
 class TextView : public View{
-
+	void printLevel();
+	void printScore();
+	void printBoards();
+	void printNext();
 public:
 	TextView(Controller*, Model*);
 	~TextView();
 	virtual void update() override;
 
-	void printInfoOne();
-	void printInfoTwo();
-	void printBoardOne();
-	void printBoardTwo();
-	void readInput(int boardNum);
+	void print();
+	void readInput();
 };
 

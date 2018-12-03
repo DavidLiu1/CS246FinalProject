@@ -10,75 +10,33 @@ Controller::~Controller() {}
 void Controller::startGame() {
 	model->newGame();
 }
-void Controller::levelUp(int board) {
-	if (board == 0) {
-		model->getBoardOne()->levelUp();
-	}
-	else {
-		model->getBoardTwo()->levelUp();
-	}
+void Controller::levelUp(int mult) {
+	model->levelUp(mult);
 }
-void Controller::levelDown(int board) {
-	if (board == 0) {
-		model->getBoardOne()->levelDown();
-	}
-	else {
-		model->getBoardTwo()->levelDown();
-	}
+void Controller::levelDown(int mult) {
+	model->levelDown(mult);
 }
-void Controller::right(int board) {
-	if (board == 0) {
-		model->getBoardOne()->right();
-	}
-	else {
-		model->getBoardTwo()->right();
-	}
+void Controller::right(int mult) {
+	model->right(mult);
 }
-void Controller::left(int board) {
-	if (board == 0) {
-		model->getBoardOne()->left();
-	}
-	else {
-		model->getBoardTwo()->left();
-	}
+void Controller::left(int mult) {
+	model->left(mult);
 }
-void Controller::down(int board) {
-	if (board == 0) {
-		model->getBoardOne()->down();
-	}
-	else {
-		model->getBoardTwo()->down();
-	}
+void Controller::down(int mult) {
+	model->down(mult);
 }
-void Controller::clockwise(int board) {
-	if (board == 0) {
-		model->getBoardOne()->clockwise();
-	}
-	else {
-		model->getBoardTwo()->clockwise();
-	}
+void Controller::clockwise(int mult) {
+	model->clockwise(mult);
 }
-void Controller::counterClockwise(int board) {
-	if (board == 0) {
-		model->getBoardOne()->counterClockwise();
-	}
-	else {
-		model->getBoardTwo()->counterClockwise();
-	}
+void Controller::counterClockwise(int mult) {
+	model->counterClockwise(mult);
 }
-void Controller::drop(int board) {
-	if (board == 0) {
-		model->getBoardOne()->drop();
-	}
-	else {
-		model->getBoardTwo()->drop();
-	}
+void Controller::drop(int mult) {
+	model->drop(mult);
 }
-void Controller::restart(int board) {
-	if (board == 0) {
-		model->getBoardOne()->restart();
-	}
-	else {
-		model->getBoardTwo()->restart();
-	}
+void Controller::restart() {
+
+}
+void Controller::switchTurn() {
+	model->switchTurn();
 }

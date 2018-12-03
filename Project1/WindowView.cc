@@ -1,25 +1,39 @@
 #include "WindowView.h"
+#include "Model.h"
+#include "Controller.h"
 
-
-WindowView::WindowView(Xwindow* w, Controller*c, Model*m) : win{ w }, View(c, m) {}
-void WindowView::printScore() {
-
+WindowView::WindowView(Controller*c, Model*m) : View(c, m) {
+	win = new Xwindow(625,650);
 }
-void WindowView::printScore() {
+WindowView::~WindowView(){}
 
-}
-void WindowView::printCurr() {
+void WindowView::update() {
+	Model::State state = model->state();
+	if (state == Model::State::NEW_GAME) {
+		//print boards
+		controller->startGame();
+	}
+	else if (state == Model::State::CURR_BLOCK) {
+		eraseCurr();
+		printCurr();
+	}
+	else if (state == Model::State::DROP) {
+		eraseRows();
+		printBlocks();
+	}
+	else if (state == Model::State::LVL_CHANGE) {
+		printLevel();
+	}
+	else if (state == Model::State::SCORE_CHANGE) {
+		printScore();
+	}
+	else if (state == Model::State::NEXT_BLOCK) {
+		eraseCurr();
+		printCurr();
+		printNext();
+	}
+	else if (state == Model::State::RESTART) {
+		restart();
+	}
 
-}
-void WindowView::eraseCurr() {
-
-}
-void WindowView::printBlocks() {
-
-}
-void WindowView::eraseBlocks() {
-
-}
-WindowView::~WindowView()
-{
 }

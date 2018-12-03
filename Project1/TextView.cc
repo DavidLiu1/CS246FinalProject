@@ -13,28 +13,7 @@ TextView::~TextView() {};
 void TextView::update() {
 	//print both boards;
 }
-void TextView::printBoardOne() {
-	for (int i = 0; i < 15; i++) {
-		for (int j = 0; j < 11; j++) {
-			cout << model->getBoardOne()->getColor(i, j);
-		}
-		cout << endl;
-	}
-}
-void TextView::printBoardTwo() {
-	for (int i = 0; i < 15; i++) {
-		for (int j = 0; j < 11; j++) {
-			cout << model->getBoardTwo()->getColor(i, j);
-		}
-		cout << endl;
-	}
-}
-void TextView::printInfoOne() {
-	cout << model->getBoardOne()->getLvl << endl;
-}
-void TextView::printInfoTwo() {
-	cout << model->getBoardTwo()->getLvl << endl;
-}
+
 //helper
 bool isPreixOf(std::string cmd, std::string action) {
 
@@ -48,7 +27,7 @@ bool isPreixOf(std::string cmd, std::string action) {
 	}
 	return true;
 }
-void TextView::readInput(int boardNum) {
+void TextView::readInput() {
 	string s;
 	cin >> s;
 	int index = 0;
@@ -59,109 +38,138 @@ void TextView::readInput(int boardNum) {
 	}
 	if (s.substr(0, 3) == "lef") {
 		if (isPreixOf(s, "left")) {
-			controller->left(boardNum);
+			controller->left(mult);
 		}
 	}
 	else if (s.substr(0, 2) == "ri") {
 		if (isPreixOf(s, "right")) {
-			controller->right(boardNum);
+			controller->right(mult);
 		}
 	}
 	else if (s.substr(0, 2) == "do") {
 		if (isPreixOf(s, "down")) {
-			controller->down(boardNum);
+			controller->down(mult);
 		}
 	}
 	else if (s.substr(0, 2) == "cl") {
 		if (isPreixOf(s, "clockwise")) {
-			controller->clockwise(boardNum);
+			controller->clockwise(mult);
 		}
 	}
 	else if (s.substr(0, 2) == "co") {
 		if (isPreixOf(s, "counterclockwise")) {
-			controller->counterClockwise(boardNum);
+			controller->counterClockwise(mult);
 		}
 	}
 	else if (s.substr(0, 2) == "dr") {
 		if (isPreixOf(s, "drop")) {
-			controller->drop(boardNum);
+			controller->drop(mult);
 		}
 	}
 	else if (s.substr(0, 6) == "levelu") {
 		if (isPreixOf(s, "levelup")) {
-			controller->levelUp(boardNum);
+			controller->levelUp(mult);
 		}
 	}
 	else if (s.substr(0, 6) == "leveld") {
 		if (isPreixOf(s, "leveldown")) {
-			controller->levelDown(boardNum);
+			controller->levelDown(mult);
 		}
 	}
 	else if (s.substr(0, 1) == "n") {
 		if (isPreixOf(s, "nonrandom")) {
-			controller->nonrandom(boardNum);
+			controller->nonrandom();
 		}
 	}
 	else if (s.substr(0, 1) == "ra") {
 		if (isPreixOf(s, "random")) {
-			controller->random(boardNum);
+			controller->random();
 		}
 	}
 	else if (s.substr(0, 2) == "se") {
 		if (isPreixOf(s, "sequence")) {
-			controller->left(boardNum);
+			//23453156531632564366465
 		}
 	}
 	else if (s.substr(0, 1) == "i") {
 		if (isPreixOf(s, "i")) {
-			controller->test(boardNum,'i');
+			controller->test('i');
 		}
 	}
 	else if (s.substr(0, 1) == "j") {
 		if (isPreixOf(s, "j")) {
-			controller->test(boardNum, 'j');
+			controller->test('j');
 		}
 	}
 	else if (s.substr(0, 1) == "l") {
 		if (isPreixOf(s, "l")) {
-			controller->test(boardNum, 'l');
+			controller->test('l');
 		}
 	}
 	else if (s.substr(0, 1) == "t") {
 		if (isPreixOf(s, "t")) {
-			controller->test(boardNum, 't');
+			controller->test('t');
 		}
 	}
 	else if (s.substr(0, 1) == "o") {
 		if (isPreixOf(s, "o")) {
-			controller->test(boardNum, 'o');
+			controller->test('o');
 		}
 	}
 	else if (s.substr(0, 1) == "s") {
 		if (isPreixOf(s, "s")) {
-			controller->test(boardNum, 's');
+			controller->test('s');
 		}
 	}
 	else if (s.substr(0, 1) == "z") {
 		if (isPreixOf(s, "z")) {
-			controller->test(boardNum, 'z');
+			controller->test('z');
 		}
 	}
 }
-
+void TextView::print() {
+	printLevel();
+	printScore();
+	cout << "-----------   -----------" << endl;
+	printBoards();
+	cout << "-----------   -----------" << endl;
+	printNext();
+}
+//helper
+void TextView::printLevel() {
+	cout << "Level: " << model->getBoardOne()->getLvl();
+	cout << "      ";
+    cout << "Level: " << model->getBoardTwo()->getLvl() << endl;
+}
+void TextView::printScore() {
+	cout << "Score: " << model->getBoardOne()->getScore();
+	cout << "      ";
+	cout << "Score: " << model->getBoardTwo()->getScore() << endl;
+}
+void TextView::printBoards() {
+	vector<vector<bool>> gridOne = model->getBoardOne()->getGrid();
+	vector<vector<bool>> gridOne = model->getBoardTwo()->getGrid();
+	for (int i = 0; i < 18; i++) {
+		for (int j = 0; j < 11; j++) {
+			
+		}
+	}
+}
 void TextView::update() {
 	Model::State state = model->state();
 	if (state == Model::State::NEW_GAME) {
-		//print boards
+		print();
 		controller->startGame();
 	}
 	else if (state == Model::State::BOARD_ONE_INPUT) {
 		cout << "Player One: ";
-		readInput(0);
+		readInput();
+		controller->switchTurn();
 	}
 	else if (state == Model::State::BOARD_TWO_INPUT) {
 		cout << "Player Two: ";
-		readInput(1);
+		readInput();
+		controller->switchTurn();
 	}
 	else if (state == Model::State::CURR_BLOCK) {
 
@@ -169,7 +177,7 @@ void TextView::update() {
 	else if (state == Model::State::DROP) {
 
 	}
-	else if (state == Model::State::LVL_UP) {
+	else if (state == Model::State::LVL_CHANGE) {
 
 	}
 	else if (state == Model::State::SCORE_CHANGE) {
@@ -181,6 +189,4 @@ void TextView::update() {
 	else if (state == Model::State::RESTART) {
 
 	}
-
-
 }

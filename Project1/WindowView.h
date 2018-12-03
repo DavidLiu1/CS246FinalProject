@@ -4,17 +4,20 @@
 
 class WindowView : public View {
 	Xwindow *win;
-	std::vector <std::pair<int, int>> points;
+	std::vector <std::pair<int, int>> oldCurrPointsOne;
+	std::vector <std::pair<int, int>> oldCurrPointsTwo;
 public:
-	WindowView(Xwindow*, Controller*, Model*);
+	WindowView(Controller*, Model*);
 	~WindowView();
+	virtual void update() override;
 
 	void printScore();
-	void printScore();
+	void printLevel();
 	void printCurr();
 	void eraseCurr();
 	void printBlocks();
-	void eraseBlocks();
-
+	void eraseRows();
+	void restart();
+	void printNext();
 };
 
