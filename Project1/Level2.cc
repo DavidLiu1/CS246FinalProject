@@ -32,7 +32,7 @@ Block * Level2::makeBlock()
 	else if (r == 9 || r ==11) {
 		return new ZBlock(false, 2);
 	}
-	else if (r == 10 || r == 12) {
+	else  {
 		return new TBlock(false, 2);
 	}
 }

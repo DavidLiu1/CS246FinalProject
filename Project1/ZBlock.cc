@@ -60,3 +60,8 @@ void ZBlock::rotateCounter(std::vector<std::vector<bool>> const grid)
 		}
 	}
 }
+
+std::string ZBlock::getText()
+{
+	return "Z";
+}

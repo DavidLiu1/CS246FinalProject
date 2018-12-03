@@ -1,4 +1,4 @@
-//#include "window.h"
+/*//#include "window.h"
 #include "View.h"
 #include <vector>
 
@@ -21,3 +21,4 @@ public:
 	void printNext();
 };
 
+*/
