@@ -15,7 +15,7 @@
 #include "sequencecmd.h"
 
 using namespace std;
-Model::Model(string s1, string s2) : boardOne{ new Board(s1) }, boardTwo{ new Board(s2) }{};
+Model::Model(string s1, string s2) : boardOne{ new Board(s1) }, boardTwo{ new Board(s2) }{std::cout << "2" << std::endl; };
 Model::~Model() {
 	delete boardOne;
 	delete boardTwo;
