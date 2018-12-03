@@ -14,7 +14,7 @@ Board::~Board()
 {
 }
 int Board::getLvl() {
-	return lvl->;
+	return lvl.getLevel();
 }
 int Board::getScore() {
 	return score;
@@ -33,7 +33,8 @@ bool Board::moveDown() {
 }
 
 //deals with scoring
-void Board::drop() {
+int Board::drop() {
+	int row = 18;
 	currBlock->drop(grid);
 	blocks.push_back(currBlock);
 	std::vector <std::pair<int, int>> points = currBlock->getPointes();
@@ -49,6 +50,9 @@ void Board::drop() {
 			}
 		}
 		if (isCleared) {
+			if (i < row) {
+				row = 1;
+			}
 			grid.erase(grid.begin() + i );
 			numCleared++;
 			isCleared = true;
@@ -67,6 +71,12 @@ void Board::drop() {
 	}
 	currBlock = nextBlock;
 	nextBlock = lvl.getBlock();
+	if (numCleared = 0) {
+		return -1;
+	}
+	else {
+		return row;
+	}
 }
 void Board::rotateClock() {
 	currBlock->rotateClock(grid);

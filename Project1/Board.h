@@ -22,7 +22,7 @@ public:
 	//return true  if it is at bottom after move
 	bool moveDown();
 	//deals with scoring
-	void drop();
+	int drop();
 	void rotateClock();
 	void rotateCounter();
 };
