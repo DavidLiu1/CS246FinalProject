@@ -119,4 +119,9 @@ bool Block::isHeavy()
 	return heavy;
 }
 
+std::string Block::getColor()
+{
+	return color;
+}
+
 
