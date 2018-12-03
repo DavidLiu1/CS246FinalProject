@@ -222,6 +222,10 @@ void Board::setNext(std::string b)
 		nextBlock = new TBlock(false, 0);
 	}
 }
+std::string Board::getNextType()
+{
+	return nextBlock->getText();
+}
 void Board::changeBlocks() {
 	currBlock = nextBlock;
 	nextBlock = lvl->makeBlock();

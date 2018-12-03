@@ -45,5 +45,6 @@ public:
 	void setLevel(int i);
 	void setSeq(std::string f);
 	void setNext(std::string b);
+	std::string getNextType();
 };
 

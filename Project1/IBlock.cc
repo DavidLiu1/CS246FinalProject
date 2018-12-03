@@ -60,3 +60,8 @@ void IBlock::rotateCounter(std::vector<std::vector<bool>> const grid)
 		}
 	}
 }
+
+std::string IBlock::getText()
+{
+	return "I";
+}

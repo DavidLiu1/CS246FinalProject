@@ -60,3 +60,8 @@ void SBlock::rotateCounter(std::vector<std::vector<bool>> const grid)
 		}
 	}
 }
+
+std::string SBlock::getText()
+{
+	return "S";
+}
