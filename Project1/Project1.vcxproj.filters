@@ -96,6 +96,9 @@
     <ClInclude Include="rotateCountercmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OBlock.cc">
@@ -180,6 +183,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="rotateCountercmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="window.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
