@@ -32,10 +32,13 @@ void TextView::readInput() {
 	cin >> s;
 	int index = 0;
 	int mult = 0;
+	bool hasNum = false;
 	while (s.at(index) < '9'&&s.at(index) > '0') {
+		hasNum = true;
 		mult = mult * 10 + (int)(s.at(index) - '0');
 		s = s.substr(1, s.size() - 1);
 	}
+	if (!hasNum) { mult = 1; }
 	if (s.substr(0, 3) == "lef") {
 		if (isPreixOf(s, "left")) {
 			controller->left(mult);
