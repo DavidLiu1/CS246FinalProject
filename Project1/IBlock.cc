@@ -3,7 +3,7 @@
 
 
 IBlock::IBlock(bool h, int l)
-	:Block(h,l,"red")
+	:Block(h,l,"Red")
 {
 	points = { {0,15},{1,15},{2,15},{3,15} };
 }

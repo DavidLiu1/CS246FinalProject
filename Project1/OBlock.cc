@@ -3,7 +3,7 @@
 
 
 OBlock::OBlock(bool h, int l)
-	:Block(h,l,"green")
+	:Block(h,l,"Green")
 {
 	points = { {0,15},{1,15},{0,16},{1,16} };
 }

@@ -26,6 +26,6 @@ public:
 	virtual void rotateCounter(std::vector <std::vector<bool>> const grid) = 0;
 	std::vector <std::pair<int, int>> getPointes();
 	bool isHeavy();
-	virtual std::string getColor() = 0;
+	std::string getColor();
 };
 

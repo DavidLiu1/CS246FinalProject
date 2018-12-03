@@ -3,7 +3,7 @@
 
 
 SBlock::SBlock(bool h, int l)
-	:Block(h,l,"teal")
+	:Block(h,l,"Cyan")
 {
 	points = { {0,15},{1,15},{1,16},{2,16} };
 }
