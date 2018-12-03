@@ -196,6 +196,10 @@
     <ClCompile Include="WindowView.cc" />
     <ClCompile Include="ZBlock.cc" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Sequence1.txt" />
+    <Text Include="Sequence2.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

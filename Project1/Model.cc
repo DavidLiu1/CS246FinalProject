@@ -33,7 +33,7 @@ Model::Turn Model::turn() const {
 	return turn_;
 }
 void Model::newGame() {
-	state_ = State::NEW_GAME;
+	state_ = State::BOARD_ONE_INPUT;
 	notify();
 }
 void Model::levelUp(int num) {
@@ -193,10 +193,13 @@ void Model::restart() {
 void Model::switchTurn() {
 	if (turn_ == Model::Turn::PLAYER_ONE) {
 		turn_ = Model::Turn::PLAYER_TWO;
+		state_ = State::BOARD_TWO_INPUT;
 	}
 	else {
 		turn_ = Model::Turn::PLAYER_ONE;
+		state_ = State::BOARD_ONE_INPUT;
 	}
+	notify();
 }
 void Model::random() {
 	if (turn_ == Model::Turn::PLAYER_ONE) {

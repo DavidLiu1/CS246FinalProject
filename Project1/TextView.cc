@@ -161,25 +161,30 @@ void TextView::printBoards() {
 				cout << model->getBoardTwo()->getType(i, j-14);
 			}
 		}
+		cout << endl;
 	}
 }
 void TextView::printNext() {
 	cout << "Next:         Next:" << endl;
 	cout << model->getBoardOne()->getNextType();
-	cout << "    " << model->getBoardTwo()->getNextType() << endl;
+	cout << "             " << model->getBoardTwo()->getNextType() << endl;
 }
 void TextView::update() {
 	Model::State state = model->state();
+	/*
 	if (state == Model::State::NEW_GAME) {
 		print();
 		controller->startGame();
 	}
-	else if (state == Model::State::BOARD_ONE_INPUT) {
+	*/
+	if (state == Model::State::BOARD_ONE_INPUT) {
+		print();
 		cout << "Player One: ";
 		readInput();
 		controller->switchTurn();
 	}
 	else if (state == Model::State::BOARD_TWO_INPUT) {
+		print();
 		cout << "Player Two: ";
 		readInput();
 		controller->switchTurn();
