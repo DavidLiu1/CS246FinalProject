@@ -5,7 +5,7 @@
 ZBlock::ZBlock(bool h, int l)
 	:Block(h,l,"Magenta")
 {
-	points = { {0,16},{1,16},{1,15},{2,15} };
+	points = { {0,15},{1,15},{1,14},{2,14} };
 }
 
 

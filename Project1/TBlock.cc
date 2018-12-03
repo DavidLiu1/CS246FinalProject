@@ -5,7 +5,7 @@
 TBlock::TBlock(bool h, int l)
 	:Block(h,l,"Blue")
 {
-	points = { {0,15},{1,15},{2,15},{1,16} };
+	points = { {0,14},{1,14},{2,14},{1,15} };
 }
 
 
