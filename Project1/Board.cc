@@ -6,7 +6,6 @@ class Block; //*********************
 Board::Board(std::string f)
 	:file{ f }, lastCleard{ 0 }, blockPlaced{ 0 }
 {
-	std::cout << "3" << std::endl;
 	for (int i = 0; i < 18; i++) {
 		std::vector<bool> temp(11, false);
 		grid.push_back(temp);
@@ -14,7 +13,7 @@ Board::Board(std::string f)
 	lvl = new Level0(file);
 	currBlock = lvl->makeBlock();
 	nextBlock = lvl->makeBlock();
-
+	std::cout << currBlock->getPointes().at(1).second << std::endl;
 }
 Board::~Board()
 {
@@ -116,10 +115,10 @@ void Board::rotateCounter() {
 }
 std::string Board::getColor(int x, int y) {
 	if (!grid.at(x).at(y)) return "White";
-	for (auto const& block : blocks) {
-		for (auto const& coord : block->getPointes()) {
-			if (x == coord.first && y == coord.second) {
-				return block->getColor();
+	for (int i = 0; i < blocks.size(); i++) {
+		for (int j = 0; j < blocks.at(i)->getPointes.size(); j++) {
+			if (blocks.at(i)->getPointes().at(j).first == x && blocks.at(i)->getPointes().at(j).second == y) {
+				return blocks.at(i)->getColor();
 			}
 		}
 	}
@@ -232,10 +231,10 @@ std::string Board::getNextType()
 std::string Board::getType(int x, int y)
 {
 	if (!grid.at(x).at(y)) return " ";
-	for (auto const& block : blocks) {
-		for (auto const& coord : block->getPointes()) {
-			if (x == coord.first && y == coord.second) {
-				return block->getText();
+	for (int i = 0; i < blocks.size(); i++) {
+		for (int j = 0; j < blocks.at(i)->getPointes.size(); j++) {
+			if (blocks.at(i)->getPointes().at(j).first == x && blocks.at(i)->getPointes().at(j).second == y) {
+				return blocks.at(i)->getText();
 			}
 		}
 	}

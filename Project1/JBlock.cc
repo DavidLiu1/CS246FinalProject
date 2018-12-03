@@ -5,7 +5,7 @@
 JBlock::JBlock(bool h, int l)
 	:Block(h,l,"Orange")
 {
-	points = { {0,15},{1,15},{2,15},{0,16} };
+	points = { {0,14},{1,14},{2,14},{0,15} };
 }
 
 

@@ -20,13 +20,10 @@ Level0::~Level0()
 
 Block * Level0::makeBlock()
 {
-	std::cout << seq << std::endl;
 	if (index == seq.size()) {
 		index = 0;
 	}
-	std::cout << seq<< std::endl;
 	if (seq.at(index) == 'I') {
-		std::cout << "2" << std::endl;
 		return new IBlock (false, 0);
 	}else if (seq.at(index) == 'J') {
 		return new JBlock(false, 0);
