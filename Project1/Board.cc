@@ -11,7 +11,8 @@ Board::Board(std::string f)
 		grid.push_back(temp);
 	}
 	lvl = new Level0(file);
-
+	currBlock = lvl->makeBlock();
+	nextBlock = lvl->makeBlock();
 }
 Board::~Board()
 {
