@@ -3,6 +3,10 @@
 #include "Block.h"
 #include "Level.h"
 #include "Level0.h"
+#include "Level1.h"
+#include "Level2.h"
+#include "Level3.h"
+#include "Level4.h"
 class Board {
 	int score;
 	int lastCleard;
@@ -36,6 +40,10 @@ public:
 	void rotateCounter();
 	std::string getColor(int, int);
 	int getLastCleared();
-	
+	void levelUp();
+	void levelDown();
+	void setLevel(int i);
+	void setSeq(std::string f);
+	void setNext(std::string b);
 };
 

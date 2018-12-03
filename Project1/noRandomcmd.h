@@ -1,11 +1,11 @@
 #pragma once
 #include "commendDeco.h"
-class levelUpcmd :
+class noRandomcmd :
 	public commendDeco
 {
 public:
-	levelUpcmd(absCommend* c);
-	~levelUpcmd();
+	noRandomcmd(absCommend* c);
+	~noRandomcmd();
 	Board* execute();
 };
 

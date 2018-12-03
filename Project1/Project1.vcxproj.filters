@@ -117,6 +117,21 @@
     <ClInclude Include="levelupcmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="levelDowncmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="randomcmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="noRandomcmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sequencecmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="blockcmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OBlock.cc">
@@ -222,6 +237,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="levelupcmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="levelDowncmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="randomcmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="noRandomcmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sequencecmd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="blockcmd.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

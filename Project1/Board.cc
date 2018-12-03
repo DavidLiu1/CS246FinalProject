@@ -125,6 +125,103 @@ std::string Board::getColor(int x, int y) {
 int Board::getLastCleared() {
 	return lastCleard;
 }
+void Board::levelUp()
+{
+	int level = lvl->getLevel();
+	level++;
+	if (level == -1) { return; }
+	//can"t cheat lvl 5 penalty by lvl up
+	if (level == 5) { return; }
+	delete lvl;
+	if (level == 0) {
+		lvl = new Level0(file);
+	}
+	else if(level == 1) {
+		lvl = new Level1();
+	}
+	else if(level == 2) {
+		lvl = new Level2();
+	}
+	else if(level == 3) {
+		lvl = new Level3();
+	}
+	else if(level == 4) {
+		lvl = new Level4();
+	}
+}
+void Board::levelDown()
+{
+	int level = lvl->getLevel()-1;
+	if (level == -1) { return; }
+	//can"t cheat lvl 5 penalty by lvl up
+	if (level == 5) { return; }
+	delete lvl;
+	if (level == 0) {
+		lvl = new Level0(file);
+	}
+	else if (level == 1) {
+		lvl = new Level1();
+	}
+	else if (level == 2) {
+		lvl = new Level2();
+	}
+	else if (level == 3) {
+		lvl = new Level3();
+	}
+	else if (level == 4) {
+		lvl = new Level4();
+	}
+}
+void Board::setLevel(int level)
+{
+	if (lvl->getLevel == level) {
+		return;
+	}
+	if (level == 0) {
+		lvl = new Level0(file);
+	}
+	else if (level == 1) {
+		lvl = new Level1();
+	}
+	else if (level == 2) {
+		lvl = new Level2();
+	}
+	else if (level == 3) {
+		lvl = new Level3();
+	}
+	else if (level == 4) {
+		lvl = new Level4();
+	}
+}
+void Board::setSeq(std::string f)
+{
+	lvl = new Level0(f);
+}
+void Board::setNext(std::string b)
+{
+	delete nextBlock;
+	if (b == "I") {
+		nextBlock = new IBlock(false, 0);
+	}
+	else if (b == "J") {
+		nextBlock = new JBlock(false, 0);
+	}
+	else if (b == "L") {
+		nextBlock = new LBlock(false, 0);
+	}
+	else if (b == "O") {
+		nextBlock = new OBlock(false, 0);
+	}
+	else if (b == "S") {
+		nextBlock = new SBlock(false, 0);
+	}
+	else if (b == "Z") {
+		nextBlock = new ZBlock(false, 0);
+	}
+	else if (b == "T") {
+		nextBlock = new TBlock(false, 0);
+	}
+}
 void Board::changeBlocks() {
 	currBlock = nextBlock;
 	nextBlock = lvl->makeBlock();

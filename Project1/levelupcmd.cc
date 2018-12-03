@@ -1,12 +1,18 @@
-#include "levelupcmd.h"
+#include "levelUpcmd.h"
 
 
 
-levelupcmd::levelupcmd()
+levelUpcmd::levelUpcmd(absCommend* c)
+	:commendDeco(c)
 {
 }
 
 
-levelupcmd::~levelupcmd()
+levelUpcmd::~levelUpcmd()
 {
+}
+Board* levelUpcmd::execute() {
+	Board* b = commend->execute();
+	b->levelUp();
+	return b;
 }
