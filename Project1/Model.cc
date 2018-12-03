@@ -1,7 +1,8 @@
 #include "Model.h"
+#include <string>
 
-
-Model::Model() : boardOne{ new Board() }, boardTwo{ new Board() }{};
+using namespace std;
+Model::Model(string s1, string s2) : boardOne{ new Board(s1) }, boardTwo{ new Board(s2) }{};
 Model::~Model() {
 	delete boardOne;
 	delete boardTwo;

@@ -1,10 +1,10 @@
 #include "Subject.h"
 #include "Board.h"
-
+#include <string>
 
 class Model : public Subject {
 public:
-	Model();
+	Model(std::string s1, std::string s2);
 	~Model();
 	Board* getBoardOne();
 	Board* getBoardTwo();
