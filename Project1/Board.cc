@@ -6,6 +6,7 @@ class Block; //*********************
 Board::Board(std::string f)
 	:file{ f }, lastCleard{ 0 }, blockPlaced{ 0 }
 {
+	std::cout << "3" << std::endl;
 	for (int i = 0; i < 18; i++) {
 		std::vector<bool> temp(11, false);
 		grid.push_back(temp);
@@ -13,6 +14,7 @@ Board::Board(std::string f)
 	lvl = new Level0(file);
 	currBlock = lvl->makeBlock();
 	nextBlock = lvl->makeBlock();
+
 }
 Board::~Board()
 {
