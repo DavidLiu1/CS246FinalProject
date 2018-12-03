@@ -1,5 +1,18 @@
-#include "Model.h"
 #include <string>
+#include "Model.h"
+#include "emptyCommend.h"
+#include "levelDowncmd.h"
+#include "levelUpcmd.h"
+#include "blockcmd.h"
+#include "dropcmd.h"
+#include "moveDowncmd.h"
+#include "moveLeftcmd.h"
+#include "moveRightcmd.h"
+#include "noRandomcmd.h"
+#include "randomcmd.h"
+#include "rotateClockcmd.h"
+#include "rotateCountercmd.h"
+#include "sequencecmd.h"
 
 using namespace std;
 Model::Model(string s1, string s2) : boardOne{ new Board(s1) }, boardTwo{ new Board(s2) }{};
@@ -25,84 +38,144 @@ void Model::newGame() {
 }
 void Model::levelUp(int num) {
 	if (turn_ == Model::Turn::PLAYER_ONE) {
-		getBoardOne()->levelUp();
+		absCommend * c = new emptyCommend(boardOne);
+		for (int i = 0; i < num; i++) {
+			c = new levelUpcmd(c);
+		}
+		c->execute();
 	}
 	else {
-		getBoardTwo()->levelUp();
+		absCommend * c = new emptyCommend(boardTwo);
+		for (int i = 0; i < num; i++) {
+			c = new levelUpcmd(c);
+		}
+		c->execute();
 	}
 	state_ = State::LVL_CHANGE;
 	notify();
 }
 void Model::levelDown(int num) {
 	if (turn_ == Model::Turn::PLAYER_ONE) {
-		getBoardOne()->levelDown();
+		absCommend * c = new emptyCommend(boardOne);
+		for (int i = 0; i < num; i++) {
+			c = new levelDowncmd(c);
+		}
+		c->execute();
 	}
 	else {
-		getBoardTwo()->levelDown();
+		absCommend * c = new emptyCommend(boardTwo);
+		for (int i = 0; i < num; i++) {
+			c = new levelDowncmd(c);
+		}
+		c->execute();
 	}
 	state_ = State::LVL_CHANGE;
 	notify();
 }
 void Model::right(int num) {
 	if (turn_ == Model::Turn::PLAYER_ONE) {
-		getBoardOne()->moveRight();
+		absCommend * c = new emptyCommend(boardOne);
+		for (int i = 0; i < num; i++) {
+			c = new moveRightcmd(c);
+		}
+		c->execute();
 	}
 	else {
-		getBoardTwo()->moveRight();
+		absCommend * c = new emptyCommend(boardTwo);
+		for (int i = 0; i < num; i++) {
+			c = new moveRightcmd(c);
+		}
+		c->execute();
 	}
 	state_ = State::CURR_BLOCK;
 	notify();
 }
 void Model::left(int num) {
 	if (turn_ == Model::Turn::PLAYER_ONE) {
-		getBoardOne()->moveLeft();
+		absCommend * c = new emptyCommend(boardOne);
+		for (int i = 0; i < num; i++) {
+			c = new moveLeftcmd(c);
+		}
+		c->execute();
 	}
 	else {
-		getBoardTwo()->moveLeft();
+		absCommend * c = new emptyCommend(boardTwo);
+		for (int i = 0; i < num; i++) {
+			c = new moveLeftcmd(c);
+		}
+		c->execute();
 	}
 	state_ = State::CURR_BLOCK;
 	notify();
 }
 void Model::down(int num) {
 	if (turn_ == Model::Turn::PLAYER_ONE) {
-		if (getBoardOne()->moveDown()) {
-			getBoardOne()->drop();
+		absCommend * c = new emptyCommend(boardOne);
+		for (int i = 0; i < num; i++) {
+			c = new moveDowncmd(c);
 		}
+		c->execute();
 	}
 	else {
-		if (getBoardTwo()->moveDown()) {
-			getBoardTwo()->drop();
+		absCommend * c = new emptyCommend(boardTwo);
+		for (int i = 0; i < num; i++) {
+			c = new moveDowncmd(c);
 		}
+		c->execute();
 	}
 	state_ = State::CURR_BLOCK;
 	notify();
 }
 void Model::clockwise(int num) {
 	if (turn_ == Model::Turn::PLAYER_ONE) {
-		getBoardOne()->rotateClock();
+		absCommend * c = new emptyCommend(boardOne);
+		for (int i = 0; i < num; i++) {
+			c = new rotateClockcmd(c);
+		}
+		c->execute();
 	}
 	else {
-		getBoardTwo()->rotateClock();
+		absCommend * c = new emptyCommend(boardTwo);
+		for (int i = 0; i < num; i++) {
+			c = new rotateClockcmd(c);
+		}
+		c->execute();
 	}
 	state_ = State::CURR_BLOCK;
 	notify();
 }
 void Model::counterClockwise(int num) {
 	if (turn_ == Model::Turn::PLAYER_ONE) {
-		getBoardOne()->rotateCounter();
+		absCommend * c = new emptyCommend(boardOne);
+		for (int i = 0; i < num; i++) {
+			c = new rotateCountercmd(c);
+		}
+		c->execute();
 	}
 	else {
-		getBoardTwo()->rotateCounter();
+		absCommend * c = new emptyCommend(boardTwo);
+		for (int i = 0; i < num; i++) {
+			c = new rotateCountercmd(c);
+		}
+		c->execute();
 	}
 	state_ = State::CURR_BLOCK;
 	notify();
 }
 void Model::drop(int num) {//	hewfu	wefhu	hweihfhuh
 	if (turn_ == Model::Turn::PLAYER_ONE) {
-		getBoardOne()->drop();
+		absCommend * c = new emptyCommend(boardOne);
+		for (int i = 0; i < num; i++) {
+			c = new dropcmd(c);
+		}
+		c->execute();
 	}
 	else {
-		getBoardTwo()->drop();
+		absCommend * c = new emptyCommend(boardTwo);
+		for (int i = 0; i < num; i++) {
+			c = new dropcmd(c);
+		}
+		c->execute();
 	}
 	state_ = State::DROP;
 	notify();
