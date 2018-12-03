@@ -141,6 +141,7 @@
     <ClInclude Include="TBlock.h" />
     <ClInclude Include="TextView.h" />
     <ClInclude Include="View.h" />
+    <ClInclude Include="window.h" />
     <ClInclude Include="WindowView.h" />
     <ClInclude Include="ZBlock.h" />
   </ItemGroup>
@@ -171,6 +172,7 @@
     <ClCompile Include="TBlock.cc" />
     <ClCompile Include="TextView.cc" />
     <ClCompile Include="View.cc" />
+    <ClCompile Include="window.cc" />
     <ClCompile Include="WindowView.cc" />
     <ClCompile Include="ZBlock.cc" />
   </ItemGroup>

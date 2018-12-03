@@ -10,6 +10,8 @@ public:
 	Board* getBoardTwo();
 	enum class State {
 		NEW_GAME,
+		BOARD_ONE_INPUT,
+		BOARD_TWO_INPUT,
 		CURR_BLOCK,
 		CLEAR_ROW,
 		LVL_UP,

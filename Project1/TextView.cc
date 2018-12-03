@@ -1,7 +1,9 @@
 #include "TextView.h"
 #include "Model.h"
+#include "Controller.h"
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -33,10 +35,59 @@ void TextView::printInfoOne() {
 void TextView::printInfoTwo() {
 	cout << model->getBoardTwo()->getLvl << endl;
 }
+void TextView::readInput(int boardNum) {
+	string s;
+	cin >> s; 
+	if (s == "left") {
+		controller->left(boardNum);
+	}
+	else if (s == "right") {
+		controller->right(boardNum);
+	}
+	else if (s == "down") {
+		controller->down(boardNum);
+	}
+	else if (s == "clockwise") {
+		controller->clockwise(boardNum);
+	}
+	else if (s == "counterclockwise") {
+		controller->counterClockwise(boardNum);
+	}
+	else if (s == "drop") {
+		controller->drop(boardNum);
+	}
+	else if (s == "levelup") {
+		controller->levelup(boardNum);
+	}
+	else if (s == "leveldown") {
+		controller->leveldown(boardNum);
+	}
+	else if (s == "norandom") {
+		controller->left(boardNum);
+	}
+	else if (s == "random") {
+		controller->left(boardNum);
+	}
+	else if (s == "sequence") {
+		controller->left(boardNum);
+	}
+	else if (s == "restart") {
+		controller->restart(boardNum);
+	}
+}
 void TextView::update() {
 	Model::State state = model->state();
 	if (state == Model::State::NEW_GAME) {
 		//print boards
+		controller->startGame();
+	}
+	else if (state == Model::State::BOARD_ONE_INPUT) {
+		cout << "Player One: ";
+		readInput(0);
+	}
+	else if (state == Model::State::BOARD_TWO_INPUT) {
+		cout << "Player Two: ";
+		readInput(1);
 	}
 	else if (state == Model::State::CURR_BLOCK) {
 
