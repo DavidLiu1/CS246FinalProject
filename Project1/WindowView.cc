@@ -3,7 +3,7 @@
 #include "Controller.h"
 
 WindowView::WindowView(Controller*c, Model*m) : View(c, m) {
-	win = new Xwindow(625,650);
+//	win = new Xwindow(625,650);
 }
 WindowView::~WindowView(){}
 

@@ -1,9 +1,9 @@
-#include "window.h"
+//#include "window.h"
 #include "View.h"
 #include <vector>
 
 class WindowView : public View {
-	Xwindow *win;
+	//Xwindow *win;
 	std::vector <std::pair<int, int>> oldCurrPointsOne;
 	std::vector <std::pair<int, int>> oldCurrPointsTwo;
 public:

@@ -1,3 +1,5 @@
+#ifndef _BOARD_H_
+#define _BOARD_H_
 #include <vector>
 #include <string>
 #include "Block.h"
@@ -48,3 +50,4 @@ public:
 	std::string getNextType();
 };
 
+#endif

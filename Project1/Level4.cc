@@ -32,12 +32,10 @@ Block * Level4::makeBlock()
 	else if (r == 6 || r == 7) {
 		return new ZBlock(true, 4);
 	}
-	else if (r == 8) {
+	else {
 		return new TBlock(true, 4);
 	}
-	else {
-		std::cerr << "no block" << std::endl;
-	}
+	
 }
 
 int Level4::getLevel()

@@ -22,7 +22,7 @@ public:
 	void random();
 	void nonrandom(std::string);
 	void sequence(std::string);
-	void test(string);
+	void test(std::string);
 	void switchTurn();
 
 private:

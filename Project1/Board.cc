@@ -50,7 +50,7 @@ void Board::drop() {
 	}
 	checkFull(true);
 
-	if (lvl->getLevel == 4) {
+	if (lvl->getLevel() == 4) {
 		if (blockPlaced % 5 == 0) {
 			int index = rand() % 11;
 			for (int i = 0; i < 11; i++) {
@@ -67,7 +67,7 @@ bool Board::checkFull(bool b) {
 	int numCleared = 0;
 	bool isCleared = true;
 	for (int i = 0; i < grid.size(); i++) {
-		for (int j = 0; j < grid.at(i).size; j++) {
+		for (int j = 0; j < grid.at(i).size(); j++) {
 			if (!grid.at(i).at(j)) {
 				isCleared = false;
 			}
@@ -82,9 +82,9 @@ bool Board::checkFull(bool b) {
 			i--;
 			for (int k = 0; k < blocks.size(); k++) {
 				if (blocks.at(k)->removeRow(i)) {
-					score += (blocks.at(k)->getLevel + 1)*(blocks.at(k)->getLevel + 1);
+					score += (blocks.at(k)->getLevel() + 1)*(blocks.at(k)->getLevel() + 1);
 					delete blocks.at(k);
-					blocks.erase(blocks.begin + k);
+					blocks.erase(blocks.begin() + k);
 					k--;
 				}
 			}
@@ -174,7 +174,7 @@ void Board::levelDown()
 }
 void Board::setLevel(int level)
 {
-	if (lvl->getLevel == level) {
+	if (lvl->getLevel() == level) {
 		return;
 	}
 	if (level == 0) {

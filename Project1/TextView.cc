@@ -10,9 +10,6 @@ using namespace std;
 TextView::TextView(Controller*c, Model*m) : View(c, m) {};
 
 TextView::~TextView() {};
-void TextView::update() {
-	//print both boards;
-}
 
 //helper
 bool isPreixOf(std::string cmd, std::string action) {
@@ -20,7 +17,7 @@ bool isPreixOf(std::string cmd, std::string action) {
 	if (cmd.size() > action.size()) {
 		return false;
 	}
-	for (int i = 0; i < cmd.size; i++) {
+	for (int i = 0; i < cmd.size(); i++) {
 		if (!cmd.at(i) == action.at(i)) {
 			return false;
 		}

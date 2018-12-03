@@ -32,11 +32,8 @@ Block * Level3::makeBlock()
 	else if (r == 6 || r ==7) {
 		return new ZBlock(true, 3);
 	}
-	else if (r == 8) {
+	else{
 		return new TBlock(true, 3);
-	}
-	else {
-		std::cerr << "no block" << std::endl;
 	}
 }
 

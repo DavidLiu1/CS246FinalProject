@@ -35,9 +35,6 @@ Block * Level2::makeBlock()
 	else if (r == 10 || r == 12) {
 		return new TBlock(false, 2);
 	}
-	else {
-		std::cerr << "no block" << std::endl;
-	}
 }
 
 int Level2::getLevel()

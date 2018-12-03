@@ -20,7 +20,7 @@ Level0::~Level0()
 
 Block * Level0::makeBlock()
 {
-	if (index = seq.size()) {
+	if (index == seq.size()) {
 		index = 0;
 	}
 	if (seq.at(index) == 'I') {
@@ -40,11 +40,8 @@ Block * Level0::makeBlock()
 	else if (seq.at(index) == 'Z') {
 		return new ZBlock(false, 0);
 	}
-	else if (seq.at(index) == 'T') {
+	else{
 		return new TBlock(false, 0);
-	}
-	else {
-		std::cerr << "no block" << std::endl;
 	}
 }
 
