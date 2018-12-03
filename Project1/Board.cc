@@ -13,6 +13,7 @@ Board::Board(std::string f)
 	lvl = new Level0(file);
 	currBlock = lvl->makeBlock();
 	nextBlock = lvl->makeBlock();
+	std::cout << currBlock->getPointes().at(1).first << std::endl;
 	std::cout << currBlock->getPointes().at(1).second << std::endl;
 }
 Board::~Board()
@@ -60,9 +61,10 @@ void Board::drop() {
 					grid.at(7).at((i + index) % 11) = true;
 				}
 			}
+			checkFull(false);
 		}
 	}
-	checkFull(false);
+	newBlock();
 }
 void Board::checkFull(bool b) {
 	int row = 18;
@@ -114,7 +116,12 @@ void Board::rotateCounter() {
 	currBlock->rotateCounter(grid);
 }
 std::string Board::getColor(int x, int y) {
-	if (!grid.at(x).at(y)) return "White";
+	for (int i = 0; i < currBlock->getPointes().size(); i++) {
+		if (currBlock->getPointes().at(i).first == x && currBlock->getPointes().at(i).second == y) {
+			return currBlock->getColor();
+		}
+	}
+	if (!grid.at(y).at(x)) return "White";
 	for (int i = 0; i < blocks.size(); i++) {
 		for (int j = 0; j < blocks.at(i)->getPointes().size(); j++) {
 			if (blocks.at(i)->getPointes().at(j).first == x && blocks.at(i)->getPointes().at(j).second == y) {
@@ -122,6 +129,7 @@ std::string Board::getColor(int x, int y) {
 			}
 		}
 	}
+	
 	return "Brown";
 }
 int Board::getLastCleared() {
@@ -230,7 +238,15 @@ std::string Board::getNextType()
 }
 std::string Board::getType(int x, int y)
 {
-	if (!grid.at(x).at(y)) return " ";
+	//std::cout << "get ty st" << std::endl;
+	for (int i = 0; i < currBlock->getPointes().size(); i++) {
+		if (currBlock->getPointes().at(i).first == x && currBlock->getPointes().at(i).second == y) {
+			return currBlock->getText();
+		}
+	}
+	if (!grid.at(y).at(x)) { return " "; }
+	//std::cout << "sad" << std::endl;
+	//std::cout << blocks.size() << std::endl;
 	for (int i = 0; i < blocks.size(); i++) {
 		for (int j = 0; j < blocks.at(i)->getPointes().size(); j++) {
 			if (blocks.at(i)->getPointes().at(j).first == x && blocks.at(i)->getPointes().at(j).second == y) {
@@ -238,7 +254,18 @@ std::string Board::getType(int x, int y)
 			}
 		}
 	}
+	
 	return "X";
+	
+}
+std::vector<std::pair<int, int>> Board::getPointes()
+{
+	return currBlock->getPointes();
+}
+void Board::newBlock()
+{
+	currBlock = nextBlock;
+	nextBlock = lvl->makeBlock();
 }
 void Board::changeBlocks() {
 	currBlock = nextBlock;

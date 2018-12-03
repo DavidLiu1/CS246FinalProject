@@ -49,6 +49,9 @@ public:
 	void setNext(std::string b);
 	std::string getNextType();
 	std::string getType(int x, int y);
+	std::vector <std::pair<int, int>> getPointes();
+	void newBlock();
+
 };
 
 #endif

@@ -15,7 +15,7 @@
 #include "sequencecmd.h"
 
 using namespace std;
-Model::Model(string s1, string s2) : boardOne{ new Board(s1) }, boardTwo{ new Board(s2) }{std::cout << "2" << std::endl; };
+Model::Model(string s1, string s2) : boardOne{ new Board(s1) }, boardTwo{ new Board(s2) }{ };
 Model::~Model() {
 	delete boardOne;
 	delete boardTwo;
@@ -34,6 +34,7 @@ Model::Turn Model::turn() const {
 }
 void Model::newGame() {
 	state_ = State::BOARD_ONE_INPUT;
+	//std::cout << "sad" << std::endl;
 	notify();
 }
 void Model::levelUp(int num) {

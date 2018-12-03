@@ -130,12 +130,17 @@ void TextView::readInput() {
 	}
 }
 void TextView::print() {
+	//std::cout << "in print" << std::endl;
 	printLevel();
+	//std::cout << "after p lvl" << std::endl;
 	printScore();
+	//std::cout << "after p s" << std::endl;
 	cout << "-----------   -----------" << endl;
 	printBoards();
+	//std::cout << "after p b" << std::endl;
 	cout << "-----------   -----------" << endl;
 	printNext();
+	//std::cout << "after p n" << std::endl;
 }
 //helper
 void TextView::printLevel() {
@@ -149,6 +154,7 @@ void TextView::printScore() {
 	cout << "Score: " << model->getBoardTwo()->getScore() << endl;
 }
 void TextView::printBoards() {
+	
 	for (int i = 17; i >= 0; i--) {
 		for (int j = 0; j < 25; j++) {
 			if (j < 11) {
@@ -162,7 +168,9 @@ void TextView::printBoards() {
 			}
 		}
 		cout << endl;
+	
 	}
+	
 }
 void TextView::printNext() {
 	cout << "Next:         Next:" << endl;
@@ -170,6 +178,7 @@ void TextView::printNext() {
 	cout << "             " << model->getBoardTwo()->getNextType() << endl;
 }
 void TextView::update() {
+	//std::cout << "up st" << std::endl;
 	Model::State state = model->state();
 	/*
 	if (state == Model::State::NEW_GAME) {
@@ -178,7 +187,9 @@ void TextView::update() {
 	}
 	*/
 	if (state == Model::State::BOARD_ONE_INPUT) {
+		//std::cout << "in one in" << std::endl;
 		print();
+		//std::cout << "after print" << std::endl;
 		cout << "Player One: ";
 		readInput();
 		controller->switchTurn();
@@ -192,4 +203,5 @@ void TextView::update() {
 	else if (state == Model::State::RESTART) {
 
 	}
+	//std::cout << "up end" << std::endl;
 }
