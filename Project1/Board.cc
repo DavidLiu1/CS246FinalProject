@@ -116,7 +116,7 @@ void Board::rotateCounter() {
 std::string Board::getColor(int x, int y) {
 	if (!grid.at(x).at(y)) return "White";
 	for (int i = 0; i < blocks.size(); i++) {
-		for (int j = 0; j < blocks.at(i)->getPointes.size(); j++) {
+		for (int j = 0; j < blocks.at(i)->getPointes().size(); j++) {
 			if (blocks.at(i)->getPointes().at(j).first == x && blocks.at(i)->getPointes().at(j).second == y) {
 				return blocks.at(i)->getColor();
 			}
@@ -232,7 +232,7 @@ std::string Board::getType(int x, int y)
 {
 	if (!grid.at(x).at(y)) return " ";
 	for (int i = 0; i < blocks.size(); i++) {
-		for (int j = 0; j < blocks.at(i)->getPointes.size(); j++) {
+		for (int j = 0; j < blocks.at(i)->getPointes().size(); j++) {
 			if (blocks.at(i)->getPointes().at(j).first == x && blocks.at(i)->getPointes().at(j).second == y) {
 				return blocks.at(i)->getText();
 			}
