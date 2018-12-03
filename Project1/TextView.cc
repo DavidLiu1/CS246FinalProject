@@ -152,13 +152,13 @@ void TextView::printBoards() {
 	for (int i = 0; i < 18; i++) {
 		for (int j = 0; j < 25; j++) {
 			if (j < 11) {
-				cout << model->getBoardOne()->getColor(i, j);
+				cout << model->getBoardOne()->getType(i, j);
 			}
 			else if (j < 14) {
 				cout << " ";
 			}
 			else {
-				cout << model->getBoardTwo()->getColor(i, j-14);
+				cout << model->getBoardTwo()->getType(i, j-14);
 			}
 		}
 	}
