@@ -62,7 +62,7 @@ void Board::drop() {
 	}
 	checkFull(false);
 }
-bool Board::checkFull(bool b) {
+void Board::checkFull(bool b) {
 	int row = 18;
 	int numCleared = 0;
 	bool isCleared = true;

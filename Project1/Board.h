@@ -23,7 +23,7 @@ class Board {
 	//check if a row is full and reeacts
 	//deals with scoring
 	//b is true if block is put in, false if mud is put in
-	bool checkFull(bool b);
+	void checkFull(bool b);
 	void changeBlocks();
 public:
 	Board(std::string f);
