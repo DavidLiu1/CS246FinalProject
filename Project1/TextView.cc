@@ -149,16 +149,16 @@ void TextView::printScore() {
 	cout << "Score: " << model->getBoardTwo()->getScore() << endl;
 }
 void TextView::printBoards() {
-	for (int i = 0; i < 18; i++) {
+	for (int i = 17; i >= 0; i--) {
 		for (int j = 0; j < 25; j++) {
 			if (j < 11) {
-				cout << model->getBoardOne()->getType(i, j);
+				cout << model->getBoardOne()->getType(j, i);
 			}
 			else if (j < 14) {
 				cout << " ";
 			}
 			else {
-				cout << model->getBoardTwo()->getType(i, j-14);
+				cout << model->getBoardTwo()->getType(j-14, i);
 			}
 		}
 		cout << endl;
