@@ -34,9 +34,9 @@ public:
 	void drop(int);
 	void restart();
 	void random();
-	void nonrandom();
-	void sequence();
-	void test(char);
+	void nonrandom(string);
+	void sequence(string);
+	void test(string);
 	void switchTurn();
 	State state() const;
 	Turn turn() const;

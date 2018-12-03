@@ -81,7 +81,8 @@ void TextView::readInput() {
 	}
 	else if (s.substr(0, 1) == "n") {
 		if (isPreixOf(s, "nonrandom")) {
-			controller->nonrandom();
+			cin >> s;
+			controller->nonrandom(s);
 		}
 	}
 	else if (s.substr(0, 1) == "ra") {
@@ -91,43 +92,43 @@ void TextView::readInput() {
 	}
 	else if (s.substr(0, 2) == "se") {
 		if (isPreixOf(s, "sequence")) {
-			//656557657
-
+			cin >> s;
+			controller->sequence(s);
 		}
 	}
 	else if (s.substr(0, 1) == "i") {
 		if (isPreixOf(s, "i")) {
-			controller->test('i');
+			controller->test("i");
 		}
 	}
 	else if (s.substr(0, 1) == "j") {
 		if (isPreixOf(s, "j")) {
-			controller->test('j');
+			controller->test("j");
 		}
 	}
 	else if (s.substr(0, 1) == "l") {
 		if (isPreixOf(s, "l")) {
-			controller->test('l');
+			controller->test("l");
 		}
 	}
 	else if (s.substr(0, 1) == "t") {
 		if (isPreixOf(s, "t")) {
-			controller->test('t');
+			controller->test("t");
 		}
 	}
 	else if (s.substr(0, 1) == "o") {
 		if (isPreixOf(s, "o")) {
-			controller->test('o');
+			controller->test("o");
 		}
 	}
 	else if (s.substr(0, 1) == "s") {
 		if (isPreixOf(s, "s")) {
-			controller->test('s');
+			controller->test("s");
 		}
 	}
 	else if (s.substr(0, 1) == "z") {
 		if (isPreixOf(s, "z")) {
-			controller->test('z');
+			controller->test("z");
 		}
 	}
 }
@@ -167,8 +168,8 @@ void TextView::printBoards() {
 }
 void TextView::printNext() {
 	cout << "Next:         Next:" << endl;
-	cout << model->getBoardOne()->getNext()->getColor();
-	cout << "    " << model->getBoardTwo()->getNext()->getColor() << endl;
+	cout << model->getBoardOne()->getNextType();
+	cout << "    " << model->getBoardTwo()->getNextType() << endl;
 }
 void TextView::update() {
 	Model::State state = model->state();

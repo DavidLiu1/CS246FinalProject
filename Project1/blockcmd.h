@@ -5,7 +5,7 @@ class blockcmd :
 {
 	std::string block;
 public:
-	blockcmd(absCommend* c, std::string file);
+	blockcmd(absCommend* c, std::string string);
 	~blockcmd();
 	Board* execute();
 };

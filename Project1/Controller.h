@@ -1,5 +1,6 @@
 #ifndef _CONTROLLER_
 #define _CONTROLLER_
+#include <string>
 
 
 class Model;
@@ -19,9 +20,9 @@ public:
 	void drop(int);
 	void restart();
 	void random();
-	void nonrandom();
-	void sequence();
-	void test(char);
+	void nonrandom(std::string);
+	void sequence(std::string);
+	void test(string);
 	void switchTurn();
 
 private:

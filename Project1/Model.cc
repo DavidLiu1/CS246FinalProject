@@ -162,7 +162,7 @@ void Model::counterClockwise(int num) {
 	state_ = State::CURR_BLOCK;
 	notify();
 }
-void Model::drop(int num) {//	hewfu	wefhu	hweihfhuh
+void Model::drop(int num) {
 	if (turn_ == Model::Turn::PLAYER_ONE) {
 		absCommend * c = new emptyCommend(boardOne);
 		for (int i = 0; i < num; i++) {
@@ -181,12 +181,12 @@ void Model::drop(int num) {//	hewfu	wefhu	hweihfhuh
 	notify();
 }
 void Model::restart() {
-	if (turn_ == Model::Turn::PLAYER_ONE) {
-		getBoardOne()->restart();
-	}
-	else {
-		getBoardTwo()->restart();
-	}
+	Board *tmp1 = boardOne;
+	boardOne = new Board("Sequence1");
+	Board *tmp2 = boardTwo;
+	boardTwo = new Board("Sequence2");
+	delete tmp1;
+	delete tmp2;
 	state_ = State::RESTART;
 	notify();
 }
@@ -196,5 +196,53 @@ void Model::switchTurn() {
 	}
 	else {
 		turn_ = Model::Turn::PLAYER_ONE;
+	}
+}
+void Model::random() {
+	if (turn_ == Model::Turn::PLAYER_ONE) {
+		absCommend * c = new emptyCommend(boardOne);
+	    c = new randomcmd(c);
+		c->execute();
+	}
+	else {
+		absCommend * c = new emptyCommend(boardTwo);
+		c = new randomcmd(c);
+		c->execute();
+	}
+}
+void Model::nonrandom(string s) {
+	if (turn_ == Model::Turn::PLAYER_ONE) {
+		absCommend * c = new emptyCommend(boardOne);
+		c = new sequencecmd(c,s);
+		c->execute();
+	}
+	else {
+		absCommend * c = new emptyCommend(boardTwo);
+		c = new sequencecmd(c, s);
+		c->execute();
+	}
+}
+void Model::sequence(string s) {
+	if (turn_ == Model::Turn::PLAYER_ONE) {
+		absCommend * c = new emptyCommend(boardOne);
+		c = new sequencecmd(c, s);
+		c->execute();
+	}
+	else {
+		absCommend * c = new emptyCommend(boardTwo);
+		c = new sequencecmd(c, s);
+		c->execute();
+	}
+}
+void Model::test(string s) {
+	if (turn_ == Model::Turn::PLAYER_ONE) {
+		absCommend * c = new emptyCommend(boardOne);
+		c = new blockcmd(c,s);
+		c->execute();
+	}
+	else {
+		absCommend * c = new emptyCommend(boardTwo);
+		c = new blockcmd(c,s);
+		c->execute();
 	}
 }

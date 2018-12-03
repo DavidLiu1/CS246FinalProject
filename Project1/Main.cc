@@ -4,7 +4,7 @@
 #include "WindowView.h"
 
 int main(int argc, char * argv[]) {
-	Model m = Model();
+	Model m = Model("Sequence1","Sequence2");
 	Controller controller(&m);  
 	TextView view(&controller, &m);
 
