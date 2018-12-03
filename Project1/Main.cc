@@ -7,6 +7,6 @@ int main(int argc, char * argv[]) {
 	Model m = Model("Sequence1","Sequence2");
 	Controller controller(&m);  
 	TextView view(&controller, &m);
-
+	controller.startGame();
 	//WindowView view(&controller, &m);
 }
