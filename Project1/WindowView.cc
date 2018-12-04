@@ -137,7 +137,7 @@ void WindowView::drawNext(int boardNum, string type) {
 		pair<int, int> p4(35, 37);
 		coords.push_back(p4);
 	}
-	for (int i = 0; i < coords.size(); i++) {
+	for (unsigned i = 0; i < coords.size(); i++) {
 		if (boardNum == 0) {
 			win->fillRectangle(coords.at(i).first, coords.at(i).second+525, 25,25, getColor(model->getBoardOne()->getNextColor()));
 		} else {
@@ -179,24 +179,24 @@ void WindowView::printScore() {
 }
 void WindowView::printCurr(int board) {
 	if (board == 0) {
-		for (int i = 0; i < model->getBoardOne()->getCurrBlock()->getPointes().size(); i++) {
+		for (unsigned i = 0; i < model->getBoardOne()->getCurrBlock()->getPointes().size(); i++) {
 			win->fillRectangle(17 - model->getBoardOne()->getCurrBlock()->getPointes().at(i).first + 25, model->getBoardOne()->getCurrBlock()->getPointes().at(i).second+25, 25, 25, getColor(model->getBoardOne()->getCurrBlock()->getColor()));
 		}
 	}
 	else {
-		for (int i = 0; i < model->getBoardTwo()->getCurrBlock()->getPointes().size(); i++) {
+		for (unsigned i = 0; i < model->getBoardTwo()->getCurrBlock()->getPointes().size(); i++) {
 			win->fillRectangle(17- model->getBoardTwo()->getCurrBlock()->getPointes().at(i).first + 25 + 375, model->getBoardTwo()->getCurrBlock()->getPointes().at(i).second + 25, 25, 25, getColor(model->getBoardOne()->getCurrBlock()->getColor()));
 		}
 	}
 }
 void WindowView::eraseCurr() {
 	if (model->turn() == Model::Turn::PLAYER_ONE) {
-		for (int i = 0; i < oldCurrPointsOne.size(); i++) {
+		for (unsigned i = 0; i < oldCurrPointsOne.size(); i++) {
 			win->fillRectangle(17 - oldCurrPointsOne.at(i).first * 25 + 25, oldCurrPointsOne.at(i).second * 25 + 25, 25,25, win->White);
 		}
 	}
 	else {
-		for (int i = 0; i < oldCurrPointsTwo.size(); i++) {
+		for (unsigned i = 0; i < oldCurrPointsTwo.size(); i++) {
 			win->fillRectangle(17 - oldCurrPointsTwo.at(i).first * 25 + 25 + 350, oldCurrPointsOne.at(i).second * 25 + 25, 25, 25, win->White);
 		}
 	}
@@ -232,13 +232,13 @@ char WindowView::getColor(string c) {
 void WindowView::saveCurr() {
 	if (model->turn() == Model::Turn::PLAYER_ONE) {
 		oldCurrPointsOne.clear();
-		for (int i = 0; i < model->getBoardOne()->getCurrBlock()->getPointes().size(); i++) {
+		for (unsigned i = 0; i < model->getBoardOne()->getCurrBlock()->getPointes().size(); i++) {
 			oldCurrPointsOne.push_back(model->getBoardOne()->getCurrBlock()->getPointes().at(i));
 		}
 	}
 	else {
 		oldCurrPointsTwo.clear();
-		for (int i = 0; i < model->getBoardTwo()->getCurrBlock()->getPointes().size(); i++) {
+		for (unsigned i = 0; i < model->getBoardTwo()->getCurrBlock()->getPointes().size(); i++) {
 			oldCurrPointsTwo.push_back(model->getBoardTwo()->getCurrBlock()->getPointes().at(i));
 		}
 	}

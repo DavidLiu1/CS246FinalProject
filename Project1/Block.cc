@@ -12,7 +12,7 @@ Block::Block(bool h,int l,std::string c)
 bool Block::removeRow(int row)
 {
 
-	for (int i = 0; i < points.size(); i++) {
+	for (unsigned i = 0; i < points.size(); i++) {
 		if (points.at(i).second == row) {
 			points.erase(points.begin() + i);
 			i--;
