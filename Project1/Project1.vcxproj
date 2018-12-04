@@ -152,10 +152,12 @@
     <ClInclude Include="TBlock.h" />
     <ClInclude Include="TextView.h" />
     <ClInclude Include="View.h" />
+    <ClInclude Include="window.h" />
     <ClInclude Include="WindowView.h" />
     <ClInclude Include="ZBlock.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\graphics\window.cc" />
     <ClCompile Include="absCommend.cc" />
     <ClCompile Include="Blind.cc" />
     <ClCompile Include="Block.cc" />
