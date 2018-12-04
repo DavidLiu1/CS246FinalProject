@@ -14,14 +14,12 @@ class WindowView : public View {
 	virtual void update() override;
 
 	void printNewGame();
-
+	void saveCurr();
 	void printScore();
 	void printLevel();
 	void printCurr(int board);
 	void eraseCurr();
 	void printBlocks();
-	void eraseRows();
-	void restart();
 	void eraseNext();
 	void drawNext(int board, std::string type);
 
