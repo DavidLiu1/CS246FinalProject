@@ -7,7 +7,9 @@ Controller::Controller(Model* m) {
 };
 
 Controller::~Controller() {}
-
+void Controller::playerOneInput() {
+	model->playerOneInput();
+}
 void Controller::startGame() {
 	model->newGame();
 }

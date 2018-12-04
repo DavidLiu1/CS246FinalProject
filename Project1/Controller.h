@@ -24,6 +24,7 @@ public:
 	void sequence(std::string);
 	void test(std::string);
 	void switchTurn();
+	void playerOneInput();
 
 private:
 	Model *model;

@@ -40,6 +40,7 @@ public:
 	void switchTurn();
 	State state() const;
 	Turn turn() const;
+	void playerOneInput();
 private:
 	State state_;
 	Turn turn_;

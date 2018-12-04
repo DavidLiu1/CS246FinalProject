@@ -2,7 +2,7 @@
 #include "Model.h"
 #include "emptyCommend.h"
 #include "levelDowncmd.h"
-#include "levelUpcmd.h"
+#include "levelupcmd.h"
 #include "blockcmd.h"
 #include "dropcmd.h"
 #include "moveDowncmd.h"
@@ -33,8 +33,12 @@ Model::Turn Model::turn() const {
 	return turn_;
 }
 void Model::newGame() {
-	state_ = State::BOARD_ONE_INPUT;
+	state_ = State::NEW_GAME;
 	//std::cout << "sad" << std::endl;
+	notify();
+}
+void Model::playerOneInput() {
+	state_ = State::BOARD_ONE_INPUT;
 	notify();
 }
 void Model::levelUp(int num) {
@@ -217,7 +221,8 @@ void Model::drop(int num) {
 	}
 	else {
 		state_ = State::DROP;
-
+		notify();
+		state_ = State::NEXT_BLOCK;
 		notify();
 	}
 }

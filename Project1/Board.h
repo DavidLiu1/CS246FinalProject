@@ -2,13 +2,13 @@
 #define _BOARD_H_
 #include <vector>
 #include <string>
-#include "Block.h"
 #include "Level.h"
 #include "Level0.h"
 #include "Level1.h"
 #include "Level2.h"
 #include "Level3.h"
 #include "Level4.h"
+#include "Board.h"
 class Board {
 	int score;
 	int lastCleard;
