@@ -222,8 +222,6 @@ void Model::drop(int num) {
 	else {
 		state_ = State::DROP;
 		notify();
-		state_ = State::NEXT_BLOCK;
-		notify();
 	}
 }
 void Model::restart() {

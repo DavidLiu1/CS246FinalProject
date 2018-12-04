@@ -26,15 +26,7 @@ void WindowView::update() {
 	}
 	else if (state == Model::State::DROP) {
 		saveCurr();
-		printBlocks();
-	}
-	else if (state == Model::State::LVL_CHANGE) {
-		printLevel();
-	}
-	else if (state == Model::State::SCORE_CHANGE) {
 		printScore();
-	}
-	else if (state == Model::State::NEXT_BLOCK) {
 		eraseNext();
 		if (model->turn() == Model::Turn::PLAYER_ONE) {
 			drawNext(0, model->getBoardOne()->getNextType());
@@ -42,6 +34,10 @@ void WindowView::update() {
 		else {
 			drawNext(1, model->getBoardTwo()->getNextType());
 		}
+		printBlocks();
+	}
+	else if (state == Model::State::LVL_CHANGE) {
+		printLevel();
 	}
 	else if (state == Model::State::RESTART) {
 		printNewGame();
@@ -167,12 +163,12 @@ void WindowView::printLevel() {
 }
 void WindowView::printScore() {
 	if (model->turn() == Model::Turn::PLAYER_ONE) {
-		win->fillRectangle(25, 50, 100, 25, win->White);
+		win->fillRectangle(25, 50, 200, 25, win->White);
 		string s = "Score: " + to_string(model->getBoardOne()->getScore());
 		win->drawString(25, 50, s, Xwindow::Black);
 	}
 	else {
-		win->fillRectangle(375, 50, 100, 25, win->White);
+		win->fillRectangle(375, 50, 200, 25, win->White);
 		string s = "Score: " + to_string(model->getBoardTwo()->getScore());
 		win->drawString(375, 50, s, Xwindow::Black);
 	}

@@ -15,8 +15,6 @@ public:
 		CURR_BLOCK,
 		DROP,
 		LVL_CHANGE,
-		SCORE_CHANGE,
-		NEXT_BLOCK,
 		RESTART
 	};
 	enum class Turn {
