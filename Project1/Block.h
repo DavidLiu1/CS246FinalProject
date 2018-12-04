@@ -21,7 +21,7 @@ public:
 	void moveLeft(std::vector <std::vector<bool>> const grid);
 	void moveRight(std::vector <std::vector<bool>> const grid);
 	bool moveDown(std::vector <std::vector<bool>> const grid);
-	bool filled(std::vector <std::vector<bool>> const grid);
+	
 	void drop(std::vector <std::vector<bool>> const grid);
 	virtual void rotateClock(std::vector <std::vector<bool>> const grid) = 0;
 	virtual void rotateCounter(std::vector <std::vector<bool>> const grid) = 0;

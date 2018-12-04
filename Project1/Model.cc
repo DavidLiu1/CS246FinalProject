@@ -211,16 +211,21 @@ void Model::drop(int num) {
 		}
 		c->execute();
 	}
-	state_ = State::DROP;
-	notify();
+	
+	if (boardOne->lost() || boardTwo->lost()) {
+		restart();
+	}
+	else {
+		state_ = State::DROP;
+
+		notify();
+	}
 }
 void Model::restart() {
-	Board *tmp1 = boardOne;
-	boardOne = new Board("Sequence1");
-	Board *tmp2 = boardTwo;
-	boardTwo = new Board("Sequence2");
-	delete tmp1;
-	delete tmp2;
+	delete boardOne;
+	boardOne = new Board("Sequence1.txt");
+	delete boardTwo;
+	boardTwo = new Board("Sequence2.txt");
 	state_ = State::RESTART;
 	notify();
 }

@@ -100,16 +100,6 @@ bool Block::moveDown(std::vector<std::vector<bool>> const grid)
 	return aIBottom;
 }
 
-bool Block::filled(std::vector<std::vector<bool>> const grid)
-{
-	bool fill = false;
-	for (unsigned i = 0; i < points.size(); i++) {
-		if (grid.at(points.at(i).second).at(points.at(i).first)) {
-			fill = true;
-		}
-	}
-	return fill;
-}
 
 void Block::drop(std::vector<std::vector<bool>> const grid)
 {

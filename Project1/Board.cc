@@ -20,9 +20,11 @@ Board::~Board()
 {
 	delete currBlock;
 	delete nextBlock;
+
 	for (int i = 0; i < blocks.size(); i++) {
 		delete blocks.at(i);
 	}
+	delete lvl;
 }
 int Board::getLvl() {
 	return lvl->getLevel();
@@ -238,6 +240,10 @@ void Board::setNext(std::string b)
 std::string Board::getNextType()
 {
 	return nextBlock->getText();
+}
+std::string Board::getNextColor()
+{
+	return nextBlock->getColor();
 }
 std::string Board::getType(int x, int y)
 {

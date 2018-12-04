@@ -48,6 +48,7 @@ public:
 	void setSeq(std::string f);
 	void setNext(std::string b);
 	std::string getNextType();
+	std::string getNextColor();
 	std::string getType(int x, int y);
 	std::vector <std::pair<int, int>> getPointes();
 	void newBlock();
