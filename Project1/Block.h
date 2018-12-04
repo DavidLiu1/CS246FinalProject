@@ -5,12 +5,13 @@
 class Block
 {
 protected:
-	int level;
-	int state;
 	bool heavy;
+	int level;
+	std::string color;
+	int state;
 	std::pair<int, int> base;
 	std::vector <std::pair<int, int>> points;
-	std::string color;
+	
 
 public:
 	Block(bool h, int l, std::string c);

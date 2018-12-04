@@ -4,7 +4,7 @@
 class Block; //*********************
 
 Board::Board(std::string f)
-	:file{ f }, lastCleard{ 0 }, blockPlaced{ 0 }
+	:file{ f }, score{ 0 },lastCleard{ 0 }, blockPlaced{ 0 }
 {
 	for (int i = 0; i < 18; i++) {
 		std::vector<bool> temp(11, false);
@@ -21,7 +21,7 @@ Board::~Board()
 	delete currBlock;
 	delete nextBlock;
 
-	for (int i = 0; i < blocks.size(); i++) {
+	for (unsigned i = 0; i < blocks.size(); i++) {
 		delete blocks.at(i);
 	}
 	delete lvl;
@@ -50,7 +50,7 @@ void Board::drop() {
 	currBlock->drop(grid);
 	blocks.push_back(currBlock);
 	std::vector <std::pair<int, int>> points = currBlock->getPointes();
-	for (int i = 0; i < points.size(); i++) {
+	for (unsigned i = 0; i < points.size(); i++) {
 		grid.at(points.at(i).second).at(points.at(i).first) = true;
 	}
 	checkFull(true);
@@ -74,7 +74,7 @@ void Board::checkFull(bool b) {
 	int row = 18;
 	int numCleared = 0;
 	bool isCleared = true;
-	for (int i = 0; i < grid.size(); i++) {
+	for (unsigned i = 0; i < grid.size(); i++) {
 		for (int j = 0; j < grid.at(i).size(); j++) {
 			if (!grid.at(i).at(j)) {
 				isCleared = false;
@@ -121,13 +121,13 @@ void Board::rotateCounter() {
 	currBlock->rotateCounter(grid);
 }
 std::string Board::getColor(int x, int y) {
-	for (int i = 0; i < currBlock->getPointes().size(); i++) {
+	for (unsigned i = 0; i < currBlock->getPointes().size(); i++) {
 		if (currBlock->getPointes().at(i).first == x && currBlock->getPointes().at(i).second == y) {
 			return currBlock->getColor();
 		}
 	}
 	if (!grid.at(y).at(x)) return "White";
-	for (int i = 0; i < blocks.size(); i++) {
+	for (unsigned i = 0; i < blocks.size(); i++) {
 		for (int j = 0; j < blocks.at(i)->getPointes().size(); j++) {
 			if (blocks.at(i)->getPointes().at(j).first == x && blocks.at(i)->getPointes().at(j).second == y) {
 				return blocks.at(i)->getColor();
@@ -248,7 +248,7 @@ std::string Board::getNextColor()
 std::string Board::getType(int x, int y)
 {
 	//std::cout << "get ty st" << std::endl;
-	for (int i = 0; i < currBlock->getPointes().size(); i++) {
+	for (unsigned i = 0; i < currBlock->getPointes().size(); i++) {
 		if (currBlock->getPointes().at(i).first == x && currBlock->getPointes().at(i).second == y) {
 			return currBlock->getText();
 		}
@@ -256,7 +256,7 @@ std::string Board::getType(int x, int y)
 	if (!grid.at(y).at(x)) { return " "; }
 	//std::cout << "sad" << std::endl;
 	//std::cout << blocks.size() << std::endl;
-	for (int i = 0; i < blocks.size(); i++) {
+	for (unsigned i = 0; i < blocks.size(); i++) {
 		for (int j = 0; j < blocks.at(i)->getPointes().size(); j++) {
 			if (blocks.at(i)->getPointes().at(j).first == x && blocks.at(i)->getPointes().at(j).second == y) {
 				return blocks.at(i)->getText();
