@@ -10,16 +10,18 @@
 #include "Level4.h"
 #include "Board.h"
 class Board {
+	std::string file;
 	int score;
 	int lastCleard;
+	//store how many blocks placed since last clear
+	int blockPlaced;
 	Level* lvl;
-	std::string file;
+	
 	std::vector<Block*> blocks;
 	std::vector<std::vector<bool>> grid;
 	Block* currBlock;
 	Block* nextBlock;
-	//store how many blocks placed since last clear
-	int blockPlaced;
+	
 	//check if a row is full and reeacts
 	//deals with scoring
 	//b is true if block is put in, false if mud is put in

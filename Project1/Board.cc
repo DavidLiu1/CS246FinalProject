@@ -4,7 +4,7 @@
 class Block; //*********************
 
 Board::Board(std::string f)
-	:file{ f }, lastCleard{ 0 }, blockPlaced{ 0 }
+	:file{ f }, score{ 0 },lastCleard{ 0 }, blockPlaced{ 0 }
 {
 	for (int i = 0; i < 18; i++) {
 		std::vector<bool> temp(11, false);

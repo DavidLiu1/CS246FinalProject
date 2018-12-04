@@ -46,6 +46,6 @@ private:
 	Turn turn_;
 	Board *boardOne;
 	Board *boardTwo;
-
+	int h1,h2;
 
 };

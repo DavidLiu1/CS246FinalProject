@@ -15,7 +15,7 @@
 #include "sequencecmd.h"
 
 using namespace std;
-Model::Model(string s1, string s2) : boardOne{ new Board(s1) }, boardTwo{ new Board(s2) }{ };
+Model::Model(string s1, string s2) : boardOne{ new Board(s1) }, boardTwo{ new Board(s2) }, h1{ 0 }, h2{ 0 } {};
 Model::~Model() {
 	delete boardOne;
 	delete boardTwo;
@@ -217,6 +217,12 @@ void Model::drop(int num) {
 	}
 	
 	if (boardOne->lost() || boardTwo->lost()) {
+		if (h1 < (boardOne->getScore())) {
+			h1 = boardOne->getScore();
+		}
+		if (h2 < (boardTwo->getScore())) {
+			h2 = boardTwo->getScore();
+		}
 		restart();
 	}
 	else {
